@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
-//using Clinic_Assistant;
 
 namespace Clinic_Assistant
 {
@@ -20,7 +19,6 @@ namespace Clinic_Assistant
          Application.SetCompatibleTextRenderingDefault(false);
          Application.Run(new Form1());
 
-         Patient p = new Patient();
-      }
+         }
    }
 }
