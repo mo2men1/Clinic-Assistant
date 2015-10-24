@@ -46,9 +46,12 @@
          // 
          // patients_dataGridView
          // 
+         this.patients_dataGridView.AllowUserToAddRows = false;
+         this.patients_dataGridView.AllowUserToDeleteRows = false;
          this.patients_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
          this.patients_dataGridView.Location = new System.Drawing.Point(36, 108);
          this.patients_dataGridView.Name = "patients_dataGridView";
+         this.patients_dataGridView.ReadOnly = true;
          this.patients_dataGridView.Size = new System.Drawing.Size(416, 326);
          this.patients_dataGridView.TabIndex = 1;
          // 

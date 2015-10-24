@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Clinic_Assistant
 {
     public partial class AddPatientForm : Form
@@ -15,6 +16,14 @@ namespace Clinic_Assistant
         public AddPatientForm()
         {
             InitializeComponent();
+        }
+
+
+        Home owner;
+        public AddPatientForm(Home _owner)
+        {
+           owner = _owner;
+           InitializeComponent();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -26,12 +35,15 @@ namespace Clinic_Assistant
         {
             var patient = new Domain.Patient
             {
-                name = textBox1.Text,
-                phone = textBox2.Text,
-                gender = textBox3.Text,
+                name = name_txt.Text,
+                phone = phone_txt.Text,
+                gender = gender_ComboBox.Text,
             };
             PatientService patientService = new PatientService();
             patientService.save(patient);
+
+            owner.Update_GridView();
+            this.Close();
         }
     }
 }

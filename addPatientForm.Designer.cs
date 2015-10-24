@@ -28,101 +28,106 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(100, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(100, 64);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(100, 38);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Name";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 45);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "phone";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 71);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "gendre";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(100, 187);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // AddPatientForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Name = "AddPatientForm";
-            this.Text = "AddPatientForm";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+         this.name_txt = new System.Windows.Forms.TextBox();
+         this.phone_txt = new System.Windows.Forms.TextBox();
+         this.name_lbl = new System.Windows.Forms.Label();
+         this.phone_lbl = new System.Windows.Forms.Label();
+         this.gender_lbl = new System.Windows.Forms.Label();
+         this.save_btn = new System.Windows.Forms.Button();
+         this.gender_ComboBox = new System.Windows.Forms.ComboBox();
+         this.SuspendLayout();
+         // 
+         // name_txt
+         // 
+         this.name_txt.Location = new System.Drawing.Point(75, 42);
+         this.name_txt.Name = "name_txt";
+         this.name_txt.Size = new System.Drawing.Size(100, 20);
+         this.name_txt.TabIndex = 0;
+         this.name_txt.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+         // 
+         // phone_txt
+         // 
+         this.phone_txt.Location = new System.Drawing.Point(75, 68);
+         this.phone_txt.Name = "phone_txt";
+         this.phone_txt.Size = new System.Drawing.Size(100, 20);
+         this.phone_txt.TabIndex = 1;
+         // 
+         // name_lbl
+         // 
+         this.name_lbl.AutoSize = true;
+         this.name_lbl.Location = new System.Drawing.Point(12, 45);
+         this.name_lbl.Name = "name_lbl";
+         this.name_lbl.Size = new System.Drawing.Size(35, 13);
+         this.name_lbl.TabIndex = 3;
+         this.name_lbl.Text = "Name";
+         // 
+         // phone_lbl
+         // 
+         this.phone_lbl.AutoSize = true;
+         this.phone_lbl.Location = new System.Drawing.Point(12, 71);
+         this.phone_lbl.Name = "phone_lbl";
+         this.phone_lbl.Size = new System.Drawing.Size(38, 13);
+         this.phone_lbl.TabIndex = 4;
+         this.phone_lbl.Text = "Phone";
+         // 
+         // gender_lbl
+         // 
+         this.gender_lbl.AutoSize = true;
+         this.gender_lbl.Location = new System.Drawing.Point(12, 97);
+         this.gender_lbl.Name = "gender_lbl";
+         this.gender_lbl.Size = new System.Drawing.Size(42, 13);
+         this.gender_lbl.TabIndex = 5;
+         this.gender_lbl.Text = "Gender";
+         // 
+         // save_btn
+         // 
+         this.save_btn.Location = new System.Drawing.Point(197, 227);
+         this.save_btn.Name = "save_btn";
+         this.save_btn.Size = new System.Drawing.Size(75, 23);
+         this.save_btn.TabIndex = 6;
+         this.save_btn.Text = "Save";
+         this.save_btn.UseVisualStyleBackColor = true;
+         this.save_btn.Click += new System.EventHandler(this.button1_Click);
+         // 
+         // gender_ComboBox
+         // 
+         this.gender_ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+         this.gender_ComboBox.FormattingEnabled = true;
+         this.gender_ComboBox.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+         this.gender_ComboBox.Location = new System.Drawing.Point(75, 94);
+         this.gender_ComboBox.Name = "gender_ComboBox";
+         this.gender_ComboBox.Size = new System.Drawing.Size(100, 21);
+         this.gender_ComboBox.TabIndex = 7;
+         // 
+         // AddPatientForm
+         // 
+         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+         this.ClientSize = new System.Drawing.Size(284, 262);
+         this.Controls.Add(this.gender_ComboBox);
+         this.Controls.Add(this.save_btn);
+         this.Controls.Add(this.gender_lbl);
+         this.Controls.Add(this.phone_lbl);
+         this.Controls.Add(this.name_lbl);
+         this.Controls.Add(this.phone_txt);
+         this.Controls.Add(this.name_txt);
+         this.Name = "AddPatientForm";
+         this.Text = "AddPatientForm";
+         this.ResumeLayout(false);
+         this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox name_txt;
+        private System.Windows.Forms.TextBox phone_txt;
+        private System.Windows.Forms.Label name_lbl;
+        private System.Windows.Forms.Label phone_lbl;
+        private System.Windows.Forms.Label gender_lbl;
+        private System.Windows.Forms.Button save_btn;
+        private System.Windows.Forms.ComboBox gender_ComboBox;
     }
 }
