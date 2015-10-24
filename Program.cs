@@ -31,13 +31,15 @@ namespace Clinic_Assistant
             var sess = sessions.OpenSession();
 
             // Create the database schema
-            new SchemaExport(cfg).Create(true, true);
-
+            //new SchemaExport(cfg).Create(true, true);
+            //new SchemaUpdate(cfg);
             // Create a Product...
+
             var patient = new Domain.Patient
             {
                 name = "someone",
                 phone = "012-3203",
+                gender = "male",
             };
 
             // And save it to the database

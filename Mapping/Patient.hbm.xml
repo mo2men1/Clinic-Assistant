@@ -4,12 +4,18 @@
                   namespace="Clinic_Assistant.Domain">
 
   <class name="Patient" table="patient">
+
+
     <id name="id">
-      <generator class="guid" />
+      <generator class="identity" />
     </id>
 
     <property name="name" />
     <property name="phone" />
+    <property name="gender" />
+    <!--
+    <property name="dateOfBirth" column="dob"/>
+    -->
   </class>
 
 </hibernate-mapping>
