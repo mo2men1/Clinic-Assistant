@@ -18,25 +18,10 @@ namespace Clinic_Assistant
       [STAThread]
       static void Main()
       {
-        // Application.EnableVisualStyles();
-         //Application.SetCompatibleTextRenderingDefault(false);
-         //Application.Run(new Form1());
+         Application.EnableVisualStyles();
+         Application.SetCompatibleTextRenderingDefault(false);
+         Application.Run(new Home());
 
-         var patient = new Domain.Patient
-            {
-               name = "someone",
-               phone = "012-3203",
-               gender = "male",
-            };
-
-         PatientService patientService = new PatientService();
-         patientService.save(patient);
-
-         var list = patientService.getPatient();
-
-        /* IQuery q = sess.CreateQuery("FROM Patient");
-         var list = q.List<Domain.Patient>();*/
-         list.ToList().ForEach(p => Console.WriteLine(p.name));
       }
    }
 }

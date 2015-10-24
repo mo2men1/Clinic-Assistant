@@ -15,6 +15,22 @@ namespace Clinic_Assistant
       public Home()
       {
          InitializeComponent();
+
+         PatientService patientService = new PatientService();
+
+         var list = patientService.getPatient();
+         patients_dataGridView.DataSource = list.ToList();
+
+
       }
+
+  
+
+      private void addPatient_btn_Click(object sender, EventArgs e)
+      {
+         AddPatientForm form = new AddPatientForm();
+         form.Show();
+      }
+
    }
 }
