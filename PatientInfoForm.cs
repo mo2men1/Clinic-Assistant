@@ -20,7 +20,7 @@ namespace Clinic_Assistant
         {
             InitializeComponent();
             name_lbl.Text = patient.name;
-            age_lbl.Text = patient.age.ToString();
+            //age_lbl.Text = patient.age.ToString(); must check if it's null
             gender_lbl.Text = patient.gender;
             phone_lbl.Text = patient.phone;
         }
