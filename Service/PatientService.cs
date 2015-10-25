@@ -49,7 +49,7 @@ namespace Clinic_Assistant
           return q.List<Domain.Patient>().First();
       }
 
-      private int dateofBirthToAge(DateTime dob)
+      public int dateofBirthToAge(DateTime dob)
       {
          DateTime d = DateTime.Today;
          int age = d.Year - dob.Year;
