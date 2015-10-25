@@ -69,6 +69,12 @@
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="Domain\Patient.cs" />
+    <Compile Include="PatientInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientInfoForm.Designer.cs">
+      <DependentUpon>PatientInfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientInfoForm.resx">
+      <DependentUpon>PatientInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

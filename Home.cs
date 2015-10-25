@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Clinic_Assistant.Domain;
 
 namespace Clinic_Assistant
 {
@@ -48,6 +49,19 @@ namespace Clinic_Assistant
          patients_dataGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
 
+      }
+      private void patients_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+      {
+          DataGridViewRow row = this.patients_dataGridView.Rows[e.RowIndex];
+          Patient patient = new Patient()
+          {
+              name=row.Cells["name"].Value.ToString(),
+              age = Int32.Parse(row.Cells["age"].Value.ToString()),
+              gender=row.Cells["gender"].Value.ToString(),
+              phone=row.Cells["phone"].Value.ToString()
+          };
+          PatientInfoForm form = new PatientInfoForm(patient);
+          form.Show();
       }
 
    }
