@@ -22,9 +22,8 @@ namespace Clinic_Assistant
             Patient patient = service.getPatientById(id);
             InitializeComponent();
             name_lbl.Text = patient.name;
-            if (service.dateofBirthToAge(patient.dateOfBirth) < 2000)
-                age_lbl.Text = service.dateofBirthToAge(patient.dateOfBirth).ToString();
-            else age_lbl.Text = "";
+            age_lbl.Text = patient.dateOfBirth != DateTime.MinValue ?
+                service.dateofBirthToAge(patient.dateOfBirth).ToString() : "";
             gender_lbl.Text = patient.gender;
             phone_lbl.Text = patient.phone;
         }
