@@ -53,14 +53,7 @@ namespace Clinic_Assistant
       private void patients_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
       {
           DataGridViewRow row = this.patients_dataGridView.Rows[e.RowIndex];
-          Patient patient = new Patient()
-          {
-              name=row.Cells["name"].Value.ToString(),
-              age = Int32.Parse(row.Cells["age"].Value.ToString()),
-              gender=row.Cells["gender"].Value.ToString(),
-              phone=row.Cells["phone"].Value.ToString()
-          };
-          PatientInfoForm form = new PatientInfoForm(patient);
+          PatientInfoForm form = new PatientInfoForm(Int32.Parse(row.Cells["id"].Value.ToString()));
           form.Show();
       }
 

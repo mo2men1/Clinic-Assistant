@@ -42,6 +42,12 @@ namespace Clinic_Assistant
           return reducedList;
       }
 
+      public Patient getPatientById(int id)
+      {
+          var sess = SessionProvider.createSession();
+          IQuery q = sess.CreateQuery("FROM Patient where id = "+ id.ToString());
+          return q.List<Domain.Patient>().First();
+      }
 
       private int dateofBirthToAge(DateTime dob)
       {

@@ -16,11 +16,13 @@ namespace Clinic_Assistant
         {
             InitializeComponent();
         }
-        public PatientInfoForm(Patient patient)
+        public PatientInfoForm(int id)
         {
+            var service = new PatientService();
+            Patient patient = service.getPatientById(id);
             InitializeComponent();
             name_lbl.Text = patient.name;
-            //age_lbl.Text = patient.age.ToString(); must check if it's null
+            age_lbl.Text = patient.age.ToString();
             gender_lbl.Text = patient.gender;
             phone_lbl.Text = patient.phone;
         }
