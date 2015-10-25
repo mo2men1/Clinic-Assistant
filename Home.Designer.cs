@@ -49,6 +49,7 @@
          this.patients_dataGridView.AllowUserToAddRows = false;
          this.patients_dataGridView.AllowUserToDeleteRows = false;
          this.patients_dataGridView.AllowUserToOrderColumns = true;
+         this.patients_dataGridView.AllowUserToResizeRows = false;
          this.patients_dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
          this.patients_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
          this.patients_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

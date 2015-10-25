@@ -30,7 +30,7 @@ namespace Clinic_Assistant
       private object queryPatientDb()
       {
          PatientService patientService = new PatientService();
-         return patientService.getPatient();
+         return patientService.getAllPatients();
       }
 
       public void Update_GridView() {
