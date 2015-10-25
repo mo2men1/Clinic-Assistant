@@ -16,10 +16,7 @@ namespace Clinic_Assistant
       {
          InitializeComponent();
 
-         PatientService patientService = new PatientService();
-         var list = patientService.getPatient();
-         patients_dataGridView.DataSource = list.ToList();
-
+         Update_GridView();
       }
 
      
@@ -30,11 +27,27 @@ namespace Clinic_Assistant
          form.Show();
       }
 
+      private object queryPatientDb()
+      {
+         PatientService patientService = new PatientService();
+         return patientService.getPatient();
+      }
 
       public void Update_GridView() {
-         PatientService patientService = new PatientService();
-         var list = patientService.getPatient();
-         patients_dataGridView.DataSource = list.ToList();
+         var data = queryPatientDb();
+         Fill_GridView(data);
+      }
+
+      private void Fill_GridView(object list)
+      {
+         patients_dataGridView.DataSource = list;
+         patients_dataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+         patients_dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+         patients_dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+         patients_dataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+         patients_dataGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+
       }
 
    }

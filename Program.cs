@@ -8,8 +8,11 @@ using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
 
+
+
 namespace Clinic_Assistant
 {
+
    static class Program
    {
       /// <summary>
@@ -21,6 +24,7 @@ namespace Clinic_Assistant
          Application.EnableVisualStyles();
          Application.SetCompatibleTextRenderingDefault(false);
          Application.Run(new Home());
+
 
       }
    }

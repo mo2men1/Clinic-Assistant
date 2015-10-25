@@ -24,7 +24,7 @@ namespace Clinic_Assistant
          sess.Flush();
       }
 
-      public IList <Patient> getPatient()
+      public object  getPatient()         //Type object to return AnonymousType
       {
          var sess = SessionProvider.createSession();
          IQuery q = sess.CreateQuery("FROM Patient");
@@ -38,7 +38,8 @@ namespace Clinic_Assistant
                 p.age = age;
              }
           }
-          return list;
+          var reducedList = list.Select(e => new { e.id, e.name,e.phone, e.gender, e.age }).ToList();
+          return reducedList;
       }
 
 
