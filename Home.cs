@@ -20,7 +20,6 @@ namespace Clinic_Assistant
          var list = patientService.getPatient();
          patients_dataGridView.DataSource = list.ToList();
 
-
       }
 
      
@@ -30,6 +29,7 @@ namespace Clinic_Assistant
          AddPatientForm form = new AddPatientForm(this);
          form.Show();
       }
+
 
       public void Update_GridView() {
          PatientService patientService = new PatientService();

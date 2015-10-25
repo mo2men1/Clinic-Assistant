@@ -35,13 +35,16 @@
          this.gender_lbl = new System.Windows.Forms.Label();
          this.save_btn = new System.Windows.Forms.Button();
          this.gender_ComboBox = new System.Windows.Forms.ComboBox();
+         this.age_lbl = new System.Windows.Forms.Label();
+         this.age_text = new System.Windows.Forms.TextBox();
+         this.label1 = new System.Windows.Forms.Label();
          this.SuspendLayout();
          // 
          // name_txt
          // 
          this.name_txt.Location = new System.Drawing.Point(75, 42);
          this.name_txt.Name = "name_txt";
-         this.name_txt.Size = new System.Drawing.Size(100, 20);
+         this.name_txt.Size = new System.Drawing.Size(197, 20);
          this.name_txt.TabIndex = 0;
          this.name_txt.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
          // 
@@ -49,7 +52,7 @@
          // 
          this.phone_txt.Location = new System.Drawing.Point(75, 68);
          this.phone_txt.Name = "phone_txt";
-         this.phone_txt.Size = new System.Drawing.Size(100, 20);
+         this.phone_txt.Size = new System.Drawing.Size(197, 20);
          this.phone_txt.TabIndex = 1;
          // 
          // name_lbl
@@ -101,11 +104,39 @@
          this.gender_ComboBox.Size = new System.Drawing.Size(100, 21);
          this.gender_ComboBox.TabIndex = 7;
          // 
+         // age_lbl
+         // 
+         this.age_lbl.AutoSize = true;
+         this.age_lbl.Location = new System.Drawing.Point(12, 128);
+         this.age_lbl.Name = "age_lbl";
+         this.age_lbl.Size = new System.Drawing.Size(26, 13);
+         this.age_lbl.TabIndex = 8;
+         this.age_lbl.Text = "Age";
+         // 
+         // age_text
+         // 
+         this.age_text.Location = new System.Drawing.Point(75, 125);
+         this.age_text.Name = "age_text";
+         this.age_text.Size = new System.Drawing.Size(197, 20);
+         this.age_text.TabIndex = 9;
+         // 
+         // label1
+         // 
+         this.label1.AutoSize = true;
+         this.label1.Location = new System.Drawing.Point(91, 171);
+         this.label1.Name = "label1";
+         this.label1.Size = new System.Drawing.Size(35, 13);
+         this.label1.TabIndex = 10;
+         this.label1.Text = "label1";
+         // 
          // AddPatientForm
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.ClientSize = new System.Drawing.Size(284, 262);
+         this.Controls.Add(this.label1);
+         this.Controls.Add(this.age_text);
+         this.Controls.Add(this.age_lbl);
          this.Controls.Add(this.gender_ComboBox);
          this.Controls.Add(this.save_btn);
          this.Controls.Add(this.gender_lbl);
@@ -129,5 +160,8 @@
         private System.Windows.Forms.Label gender_lbl;
         private System.Windows.Forms.Button save_btn;
         private System.Windows.Forms.ComboBox gender_ComboBox;
+        private System.Windows.Forms.Label age_lbl;
+        private System.Windows.Forms.TextBox age_text;
+        private System.Windows.Forms.Label label1;
     }
 }

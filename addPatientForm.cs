@@ -18,7 +18,6 @@ namespace Clinic_Assistant
             InitializeComponent();
         }
 
-
         Home owner;
         public AddPatientForm(Home _owner)
         {
@@ -38,12 +37,19 @@ namespace Clinic_Assistant
                 name = name_txt.Text,
                 phone = phone_txt.Text,
                 gender = gender_ComboBox.Text,
+                age = Convert.ToInt32(age_text.Text), 
             };
+          
             PatientService patientService = new PatientService();
             patientService.save(patient);
 
+            
+            //label1.Text = ageToDateOfBirth(21).ToString("yyyy");
             owner.Update_GridView();
             this.Close();
         }
+
+        
+
     }
 }

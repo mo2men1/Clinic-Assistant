@@ -13,6 +13,12 @@ namespace Clinic_Assistant
    {
       public void save(Patient p)
       {
+         if (p.age != null)
+         {
+            int age = (int)p.age;
+            p.dateOfBirth = ageToDateOfBirth(age);
+            p.age = null;
+         }
          var sess = SessionProvider.createSession();
          sess.Save(p);
          sess.Flush();
@@ -22,7 +28,32 @@ namespace Clinic_Assistant
       {
          var sess = SessionProvider.createSession();
          IQuery q = sess.CreateQuery("FROM Patient");
-         return  q.List<Domain.Patient>();
+          IList<Domain.Patient> list = q.List<Domain.Patient>();
+          foreach (Patient p in list)
+          {
+             if (p.dateOfBirth != DateTime.MinValue)
+             {
+                DateTime dob = p.dateOfBirth;
+                int age = dateofBirthToAge(dob);
+                p.age = age;
+             }
+          }
+          return list;
+      }
+
+
+      private int dateofBirthToAge(DateTime dob)
+      {
+         DateTime d = DateTime.Today;
+         int age = d.Year - dob.Year;
+         return age;
+      }
+
+      private DateTime ageToDateOfBirth(int age)
+      {
+         DateTime d = DateTime.Today;
+         d = d.AddYears(-age);
+         return d;
       }
    }
 }
