@@ -45,7 +45,7 @@ namespace Clinic_Assistant
 
             
             //label1.Text = ageToDateOfBirth(21).ToString("yyyy");
-            owner.Update_GridView();
+            owner.Fill_GridView();
             this.Close();
         }
 

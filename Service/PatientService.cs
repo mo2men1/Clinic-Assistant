@@ -49,6 +49,14 @@ namespace Clinic_Assistant
           return q.List<Domain.Patient>().First();
       }
 
+      public void deletePatient(int id)
+      {
+         var sess = SessionProvider.createSession();
+         Patient patient = sess.Get<Patient>(id);
+         sess.Delete(patient);
+         sess.Flush();
+      }
+
       public int dateofBirthToAge(DateTime dob)
       {
          DateTime d = DateTime.Today;
