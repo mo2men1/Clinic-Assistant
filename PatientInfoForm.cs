@@ -16,16 +16,31 @@ namespace Clinic_Assistant
         {
             InitializeComponent();
         }
-        public PatientInfoForm(int id)
+
+        Home owner;
+        public PatientInfoForm(int id, Home _owner)
         {
+           owner = _owner;
             var service = new PatientService();
             Patient patient = service.getPatientById(id);
             InitializeComponent();
-            name_lbl.Text = patient.name;
-            age_lbl.Text = patient.dateOfBirth != DateTime.MinValue ?
+            name_txt.Text = patient.name;
+            id_txt.Text = patient.id.ToString();
+            age_txt.Text = patient.dateOfBirth != DateTime.MinValue ?
                 service.dateofBirthToAge(patient.dateOfBirth).ToString() : "";
-            gender_lbl.Text = patient.gender;
-            phone_lbl.Text = patient.phone;
+            gender_txt.Text = patient.gender;
+            phone_txt.Text = patient.phone;
         }
+
+        private void delete_btn_Click(object sender, EventArgs e)
+        {
+           
+            owner.delete_patient();
+            this.Close();
+           
+        }
+
+
+        
     }
 }

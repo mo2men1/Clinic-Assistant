@@ -33,30 +33,10 @@ namespace Clinic_Assistant
          form.Show();
       }
 
-      private object queryPatientDb()
-      {
-         PatientService patientService = new PatientService();
-         return patientService.getPatient();
-      }
-
-
-      public void Fill_GridView()
-      {
-         var data = queryPatientDb();
-         var listBinding = new BindingSource();
-         listBinding.DataSource = data;
-         patients_dataGridView.DataSource = listBinding;
-         patients_dataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-         patients_dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-         patients_dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-         patients_dataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-         patients_dataGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-
-      }
       private void patients_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
       {
           DataGridViewRow row = this.patients_dataGridView.Rows[e.RowIndex];
-          PatientInfoForm form = new PatientInfoForm(Int32.Parse(row.Cells["id"].Value.ToString()));
+          PatientInfoForm form = new PatientInfoForm(Int32.Parse(row.Cells["id"].Value.ToString()), this);
           form.Show();
       }
 
@@ -66,6 +46,34 @@ namespace Clinic_Assistant
       }
 
       private void delete_btn_Click(object sender, EventArgs e)
+      {
+         if(this.patients_dataGridView.SelectedRows.Count != 0)
+            delete_patient();
+      }
+
+      private void patients_dataGridView_KeyPress(object sender, KeyPressEventArgs e)
+      {
+         if (e.KeyChar == (char)Keys.Enter && this.patients_dataGridView.SelectedRows.Count != 0)
+         {
+            DataGridViewRow row = this.patients_dataGridView.CurrentRow;
+            PatientInfoForm form = new PatientInfoForm(Int32.Parse(row.Cells["id"].Value.ToString()), this);
+            form.Show();
+            e.Handled = true;
+         }
+         else if (e.KeyChar == (char)Keys.Escape)
+         {
+            this.patients_dataGridView.ClearSelection();
+            this.delete_btn.Enabled = false;
+         }
+      }
+
+      private object queryPatientDb()
+      {
+         PatientService patientService = new PatientService();
+         return patientService.getPatient();
+      }
+
+      public void delete_patient()
       {
          string name = patients_dataGridView.CurrentRow.Cells["name"].Value.ToString();
          DialogResult dialogresult = MessageBox.Show(
@@ -80,5 +88,18 @@ namespace Clinic_Assistant
          }
       }
 
+      public void Fill_GridView()
+      {
+         var data = queryPatientDb();
+         var listBinding = new BindingSource();
+         listBinding.DataSource = data;
+         patients_dataGridView.DataSource = listBinding;
+         patients_dataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+         patients_dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+         patients_dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+         patients_dataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+         patients_dataGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+      }
    }
 }

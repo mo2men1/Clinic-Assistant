@@ -28,118 +28,160 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.name_lbl = new System.Windows.Forms.Label();
-            this.gender_lbl = new System.Windows.Forms.Label();
-            this.age_lbl = new System.Windows.Forms.Label();
-            this.phone_lbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
-            // 
-            // name_lbl
-            // 
-            this.name_lbl.AutoSize = true;
-            this.name_lbl.Location = new System.Drawing.Point(62, 31);
-            this.name_lbl.Name = "name_lbl";
-            this.name_lbl.Size = new System.Drawing.Size(75, 13);
-            this.name_lbl.TabIndex = 0;
-            this.name_lbl.Text = "pateint\'s name";
-            // 
-            // gender_lbl
-            // 
-            this.gender_lbl.AutoSize = true;
-            this.gender_lbl.Location = new System.Drawing.Point(62, 100);
-            this.gender_lbl.Name = "gender_lbl";
-            this.gender_lbl.Size = new System.Drawing.Size(82, 13);
-            this.gender_lbl.TabIndex = 1;
-            this.gender_lbl.Text = "patient\'s gender";
-            // 
-            // age_lbl
-            // 
-            this.age_lbl.AutoSize = true;
-            this.age_lbl.Location = new System.Drawing.Point(62, 66);
-            this.age_lbl.Name = "age_lbl";
-            this.age_lbl.Size = new System.Drawing.Size(67, 13);
-            this.age_lbl.TabIndex = 2;
-            this.age_lbl.Text = "patient\'s age";
-            // 
-            // phone_lbl
-            // 
-            this.phone_lbl.AutoSize = true;
-            this.phone_lbl.Location = new System.Drawing.Point(62, 138);
-            this.phone_lbl.Name = "phone_lbl";
-            this.phone_lbl.Size = new System.Drawing.Size(79, 13);
-            this.phone_lbl.TabIndex = 3;
-            this.phone_lbl.Text = "patient\'s phone";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "name:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "age:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 100);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "gender:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 138);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "phone:";
-            // 
-            // PatientInfoForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.phone_lbl);
-            this.Controls.Add(this.age_lbl);
-            this.Controls.Add(this.gender_lbl);
-            this.Controls.Add(this.name_lbl);
-            this.Name = "PatientInfoForm";
-            this.Text = "PatientInfoForm";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+         this.label1 = new System.Windows.Forms.Label();
+         this.label2 = new System.Windows.Forms.Label();
+         this.label3 = new System.Windows.Forms.Label();
+         this.label4 = new System.Windows.Forms.Label();
+         this.name_txt = new System.Windows.Forms.TextBox();
+         this.age_txt = new System.Windows.Forms.TextBox();
+         this.phone_txt = new System.Windows.Forms.TextBox();
+         this.gender_txt = new System.Windows.Forms.TextBox();
+         this.id_txt = new System.Windows.Forms.TextBox();
+         this.label5 = new System.Windows.Forms.Label();
+         this.delete_btn = new System.Windows.Forms.Button();
+         this.SuspendLayout();
+         // 
+         // label1
+         // 
+         this.label1.AutoSize = true;
+         this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label1.Location = new System.Drawing.Point(12, 31);
+         this.label1.Name = "label1";
+         this.label1.Size = new System.Drawing.Size(44, 15);
+         this.label1.TabIndex = 4;
+         this.label1.Text = "Name:";
+         // 
+         // label2
+         // 
+         this.label2.AutoSize = true;
+         this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label2.Location = new System.Drawing.Point(12, 66);
+         this.label2.Name = "label2";
+         this.label2.Size = new System.Drawing.Size(31, 15);
+         this.label2.TabIndex = 5;
+         this.label2.Text = "Age:";
+         // 
+         // label3
+         // 
+         this.label3.AutoSize = true;
+         this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label3.Location = new System.Drawing.Point(235, 66);
+         this.label3.Name = "label3";
+         this.label3.Size = new System.Drawing.Size(51, 15);
+         this.label3.TabIndex = 6;
+         this.label3.Text = "Gender:";
+         // 
+         // label4
+         // 
+         this.label4.AutoSize = true;
+         this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label4.Location = new System.Drawing.Point(12, 96);
+         this.label4.Name = "label4";
+         this.label4.Size = new System.Drawing.Size(46, 15);
+         this.label4.TabIndex = 7;
+         this.label4.Text = "Phone:";
+         // 
+         // name_txt
+         // 
+         this.name_txt.Location = new System.Drawing.Point(67, 30);
+         this.name_txt.Name = "name_txt";
+         this.name_txt.ReadOnly = true;
+         this.name_txt.Size = new System.Drawing.Size(176, 20);
+         this.name_txt.TabIndex = 8;
+         // 
+         // age_txt
+         // 
+         this.age_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.age_txt.Location = new System.Drawing.Point(67, 65);
+         this.age_txt.Name = "age_txt";
+         this.age_txt.ReadOnly = true;
+         this.age_txt.Size = new System.Drawing.Size(100, 21);
+         this.age_txt.TabIndex = 9;
+         // 
+         // phone_txt
+         // 
+         this.phone_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.phone_txt.Location = new System.Drawing.Point(67, 95);
+         this.phone_txt.Name = "phone_txt";
+         this.phone_txt.ReadOnly = true;
+         this.phone_txt.Size = new System.Drawing.Size(163, 21);
+         this.phone_txt.TabIndex = 10;
+         // 
+         // gender_txt
+         // 
+         this.gender_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.gender_txt.Location = new System.Drawing.Point(292, 63);
+         this.gender_txt.Name = "gender_txt";
+         this.gender_txt.ReadOnly = true;
+         this.gender_txt.Size = new System.Drawing.Size(100, 21);
+         this.gender_txt.TabIndex = 11;
+         // 
+         // id_txt
+         // 
+         this.id_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.id_txt.Location = new System.Drawing.Point(292, 30);
+         this.id_txt.Name = "id_txt";
+         this.id_txt.ReadOnly = true;
+         this.id_txt.Size = new System.Drawing.Size(100, 21);
+         this.id_txt.TabIndex = 12;
+         // 
+         // label5
+         // 
+         this.label5.AutoSize = true;
+         this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label5.Location = new System.Drawing.Point(264, 31);
+         this.label5.Name = "label5";
+         this.label5.Size = new System.Drawing.Size(22, 15);
+         this.label5.TabIndex = 13;
+         this.label5.Text = "ID:";
+         // 
+         // delete_btn
+         // 
+         this.delete_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.delete_btn.Location = new System.Drawing.Point(308, 144);
+         this.delete_btn.Name = "delete_btn";
+         this.delete_btn.Size = new System.Drawing.Size(84, 28);
+         this.delete_btn.TabIndex = 14;
+         this.delete_btn.Text = "Delete";
+         this.delete_btn.UseVisualStyleBackColor = true;
+         this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
+         // 
+         // PatientInfoForm
+         // 
+         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+         this.ClientSize = new System.Drawing.Size(413, 376);
+         this.Controls.Add(this.delete_btn);
+         this.Controls.Add(this.label5);
+         this.Controls.Add(this.id_txt);
+         this.Controls.Add(this.gender_txt);
+         this.Controls.Add(this.phone_txt);
+         this.Controls.Add(this.age_txt);
+         this.Controls.Add(this.name_txt);
+         this.Controls.Add(this.label4);
+         this.Controls.Add(this.label3);
+         this.Controls.Add(this.label2);
+         this.Controls.Add(this.label1);
+         this.Name = "PatientInfoForm";
+         this.Text = "PatientInfoForm";
+         this.ResumeLayout(false);
+         this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label name_lbl;
-        private System.Windows.Forms.Label gender_lbl;
-        private System.Windows.Forms.Label age_lbl;
-        private System.Windows.Forms.Label phone_lbl;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox name_txt;
+        private System.Windows.Forms.TextBox age_txt;
+        private System.Windows.Forms.TextBox phone_txt;
+        private System.Windows.Forms.TextBox gender_txt;
+        private System.Windows.Forms.TextBox id_txt;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button delete_btn;
 
     }
 }

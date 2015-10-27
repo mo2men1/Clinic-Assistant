@@ -37,7 +37,7 @@
          // addPatient_btn
          // 
          this.addPatient_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.addPatient_btn.Location = new System.Drawing.Point(494, 152);
+         this.addPatient_btn.Location = new System.Drawing.Point(55, 427);
          this.addPatient_btn.Name = "addPatient_btn";
          this.addPatient_btn.Size = new System.Drawing.Size(115, 43);
          this.addPatient_btn.TabIndex = 0;
@@ -54,22 +54,24 @@
          this.patients_dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
          this.patients_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
          this.patients_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-         this.patients_dataGridView.Location = new System.Drawing.Point(36, 108);
+         this.patients_dataGridView.Location = new System.Drawing.Point(55, 31);
          this.patients_dataGridView.Margin = new System.Windows.Forms.Padding(4);
          this.patients_dataGridView.Name = "patients_dataGridView";
          this.patients_dataGridView.ReadOnly = true;
          this.patients_dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
          this.patients_dataGridView.RowHeadersVisible = false;
          this.patients_dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-         this.patients_dataGridView.Size = new System.Drawing.Size(416, 326);
+         this.patients_dataGridView.Size = new System.Drawing.Size(543, 360);
          this.patients_dataGridView.TabIndex = 2;
          this.patients_dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.patients_dataGridView_CellContentClick);
+         this.patients_dataGridView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.patients_dataGridView_KeyPress);
+         
          // 
          // delete_btn
          // 
          this.delete_btn.Enabled = false;
          this.delete_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.delete_btn.Location = new System.Drawing.Point(494, 222);
+         this.delete_btn.Location = new System.Drawing.Point(207, 426);
          this.delete_btn.Name = "delete_btn";
          this.delete_btn.Size = new System.Drawing.Size(115, 45);
          this.delete_btn.TabIndex = 1;
@@ -81,12 +83,13 @@
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+         this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
          this.ClientSize = new System.Drawing.Size(649, 493);
          this.Controls.Add(this.delete_btn);
          this.Controls.Add(this.patients_dataGridView);
          this.Controls.Add(this.addPatient_btn);
          this.Name = "Home";
-         this.Text = "Form1";
+         this.Text = "Clinic Assistant";
          ((System.ComponentModel.ISupportInitialize)(this.patients_dataGridView)).EndInit();
          this.ResumeLayout(false);
 
