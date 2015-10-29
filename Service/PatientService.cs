@@ -24,7 +24,7 @@ namespace Clinic_Assistant
          sess.Flush();
       }
 
-      public object  getPatient()         //Type object to return AnonymousType
+      public object  getAllPatients()         //Type object to return AnonymousType
       {
          var sess = SessionProvider.createSession();
          IQuery q = sess.CreateQuery("FROM Patient");

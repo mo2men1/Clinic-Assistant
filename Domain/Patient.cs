@@ -14,5 +14,6 @@ namespace Clinic_Assistant.Domain
         public virtual string gender { get; set; }
         public virtual DateTime dateOfBirth { get; set; }
         public virtual Nullable<int> age { get; set; }
+        public virtual string medical_history { get; set; }
     }
 }
