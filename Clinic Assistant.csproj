@@ -77,6 +77,7 @@
     <Compile Include="AddPatientForm.Designer.cs">
       <DependentUpon>AddPatientForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Domain\Disease.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +91,7 @@
     <Compile Include="PatientInfoForm.Designer.cs">
       <DependentUpon>PatientInfoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Service\DiseaseService.cs" />
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,6 +130,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Mapping\Disease.hbm.xml" />
     <EmbeddedResource Include="Mapping\Patient.hbm.xml" />
     <Content Include="hibernate.cfg.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

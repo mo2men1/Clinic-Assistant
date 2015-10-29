@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Clinic_Assistant.Domain;
 
 
 namespace Clinic_Assistant
@@ -16,6 +17,7 @@ namespace Clinic_Assistant
         public AddPatientForm()
         {
             InitializeComponent();
+            fillCheckBoxList();
         }
 
         Home owner;
@@ -23,12 +25,10 @@ namespace Clinic_Assistant
         {
            owner = _owner;
            InitializeComponent();
+           fillCheckBoxList();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -47,6 +47,13 @@ namespace Clinic_Assistant
             //label1.Text = ageToDateOfBirth(21).ToString("yyyy");
             owner.Fill_GridView();
             this.Close();
+        }
+
+        private void fillCheckBoxList()
+        {
+           DiseaseService diseasesrvc = new DiseaseService();
+           var list = diseasesrvc.getAllDiseases();
+           disease_checklist.DataSource = list;
         }
 
         

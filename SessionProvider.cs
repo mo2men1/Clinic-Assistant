@@ -15,6 +15,7 @@ namespace Clinic_Assistant
             var cfg = new Configuration();
             cfg.Configure();
             cfg.AddAssembly(typeof(Domain.Patient).Assembly);
+            
 
             // Get ourselves an NHibernate Session
             var sessions = cfg.BuildSessionFactory();

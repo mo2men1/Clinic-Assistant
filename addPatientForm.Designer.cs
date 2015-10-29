@@ -37,54 +37,58 @@
          this.gender_ComboBox = new System.Windows.Forms.ComboBox();
          this.age_lbl = new System.Windows.Forms.Label();
          this.age_text = new System.Windows.Forms.TextBox();
-         this.label1 = new System.Windows.Forms.Label();
+         this.groupBox1 = new System.Windows.Forms.GroupBox();
+         this.disease_checklist = new System.Windows.Forms.CheckedListBox();
+         this.groupBox1.SuspendLayout();
          this.SuspendLayout();
          // 
          // name_txt
          // 
          this.name_txt.Location = new System.Drawing.Point(75, 42);
          this.name_txt.Name = "name_txt";
-         this.name_txt.Size = new System.Drawing.Size(197, 20);
+         this.name_txt.Size = new System.Drawing.Size(278, 20);
          this.name_txt.TabIndex = 0;
-         this.name_txt.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
          // 
          // phone_txt
          // 
          this.phone_txt.Location = new System.Drawing.Point(75, 68);
          this.phone_txt.Name = "phone_txt";
-         this.phone_txt.Size = new System.Drawing.Size(197, 20);
+         this.phone_txt.Size = new System.Drawing.Size(137, 20);
          this.phone_txt.TabIndex = 1;
          // 
          // name_lbl
          // 
          this.name_lbl.AutoSize = true;
-         this.name_lbl.Location = new System.Drawing.Point(12, 45);
+         this.name_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.name_lbl.Location = new System.Drawing.Point(16, 45);
          this.name_lbl.Name = "name_lbl";
-         this.name_lbl.Size = new System.Drawing.Size(35, 13);
+         this.name_lbl.Size = new System.Drawing.Size(53, 17);
          this.name_lbl.TabIndex = 3;
-         this.name_lbl.Text = "Name";
+         this.name_lbl.Text = "Name :";
          // 
          // phone_lbl
          // 
          this.phone_lbl.AutoSize = true;
+         this.phone_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.phone_lbl.Location = new System.Drawing.Point(12, 71);
          this.phone_lbl.Name = "phone_lbl";
-         this.phone_lbl.Size = new System.Drawing.Size(38, 13);
+         this.phone_lbl.Size = new System.Drawing.Size(53, 16);
          this.phone_lbl.TabIndex = 4;
-         this.phone_lbl.Text = "Phone";
+         this.phone_lbl.Text = "Phone :";
          // 
          // gender_lbl
          // 
          this.gender_lbl.AutoSize = true;
+         this.gender_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.gender_lbl.Location = new System.Drawing.Point(12, 97);
          this.gender_lbl.Name = "gender_lbl";
-         this.gender_lbl.Size = new System.Drawing.Size(42, 13);
+         this.gender_lbl.Size = new System.Drawing.Size(59, 16);
          this.gender_lbl.TabIndex = 5;
-         this.gender_lbl.Text = "Gender";
+         this.gender_lbl.Text = "Gender :";
          // 
          // save_btn
          // 
-         this.save_btn.Location = new System.Drawing.Point(197, 227);
+         this.save_btn.Location = new System.Drawing.Point(325, 326);
          this.save_btn.Name = "save_btn";
          this.save_btn.Size = new System.Drawing.Size(75, 23);
          this.save_btn.TabIndex = 6;
@@ -95,46 +99,61 @@
          // gender_ComboBox
          // 
          this.gender_ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+         this.gender_ComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.gender_ComboBox.FormattingEnabled = true;
          this.gender_ComboBox.Items.AddRange(new object[] {
             "Male",
             "Female"});
          this.gender_ComboBox.Location = new System.Drawing.Point(75, 94);
          this.gender_ComboBox.Name = "gender_ComboBox";
-         this.gender_ComboBox.Size = new System.Drawing.Size(100, 21);
+         this.gender_ComboBox.Size = new System.Drawing.Size(100, 23);
          this.gender_ComboBox.TabIndex = 7;
          // 
          // age_lbl
          // 
          this.age_lbl.AutoSize = true;
-         this.age_lbl.Location = new System.Drawing.Point(12, 128);
+         this.age_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.age_lbl.Location = new System.Drawing.Point(194, 97);
          this.age_lbl.Name = "age_lbl";
-         this.age_lbl.Size = new System.Drawing.Size(26, 13);
+         this.age_lbl.Size = new System.Drawing.Size(39, 16);
          this.age_lbl.TabIndex = 8;
-         this.age_lbl.Text = "Age";
+         this.age_lbl.Text = "Age :";
          // 
          // age_text
          // 
-         this.age_text.Location = new System.Drawing.Point(75, 125);
+         this.age_text.Location = new System.Drawing.Point(234, 96);
          this.age_text.Name = "age_text";
-         this.age_text.Size = new System.Drawing.Size(197, 20);
+         this.age_text.Size = new System.Drawing.Size(119, 20);
          this.age_text.TabIndex = 9;
          // 
-         // label1
+         // groupBox1
          // 
-         this.label1.AutoSize = true;
-         this.label1.Location = new System.Drawing.Point(91, 171);
-         this.label1.Name = "label1";
-         this.label1.Size = new System.Drawing.Size(35, 13);
-         this.label1.TabIndex = 10;
-         this.label1.Text = "label1";
+         this.groupBox1.Controls.Add(this.disease_checklist);
+         this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.groupBox1.Location = new System.Drawing.Point(16, 136);
+         this.groupBox1.Name = "groupBox1";
+         this.groupBox1.Size = new System.Drawing.Size(384, 173);
+         this.groupBox1.TabIndex = 10;
+         this.groupBox1.TabStop = false;
+         this.groupBox1.Text = "Medical History";
+         // 
+         // disease_checklist
+         // 
+         this.disease_checklist.CheckOnClick = true;
+         this.disease_checklist.FormattingEnabled = true;
+         this.disease_checklist.Location = new System.Drawing.Point(13, 20);
+         this.disease_checklist.MultiColumn = true;
+         this.disease_checklist.Name = "disease_checklist";
+         this.disease_checklist.Size = new System.Drawing.Size(365, 148);
+         this.disease_checklist.Sorted = true;
+         this.disease_checklist.TabIndex = 0;
          // 
          // AddPatientForm
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         this.ClientSize = new System.Drawing.Size(284, 262);
-         this.Controls.Add(this.label1);
+         this.ClientSize = new System.Drawing.Size(411, 361);
+         this.Controls.Add(this.groupBox1);
          this.Controls.Add(this.age_text);
          this.Controls.Add(this.age_lbl);
          this.Controls.Add(this.gender_ComboBox);
@@ -146,6 +165,7 @@
          this.Controls.Add(this.name_txt);
          this.Name = "AddPatientForm";
          this.Text = "AddPatientForm";
+         this.groupBox1.ResumeLayout(false);
          this.ResumeLayout(false);
          this.PerformLayout();
 
@@ -162,6 +182,7 @@
         private System.Windows.Forms.ComboBox gender_ComboBox;
         private System.Windows.Forms.Label age_lbl;
         private System.Windows.Forms.TextBox age_text;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckedListBox disease_checklist;
     }
 }
