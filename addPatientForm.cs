@@ -80,6 +80,7 @@ namespace Clinic_Assistant
               str += itemchecked.ToString() + ", ";
            }
            str = str.Substring(0, str.Length - 2);
+           str += ".";
            return str;
 
         }

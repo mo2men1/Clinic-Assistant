@@ -39,6 +39,8 @@
          this.id_txt = new System.Windows.Forms.TextBox();
          this.label5 = new System.Windows.Forms.Label();
          this.delete_btn = new System.Windows.Forms.Button();
+         this.label6 = new System.Windows.Forms.Label();
+         this.medicalHistory_txt = new System.Windows.Forms.TextBox();
          this.SuspendLayout();
          // 
          // label1
@@ -146,11 +148,35 @@
          this.delete_btn.UseVisualStyleBackColor = true;
          this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
          // 
+         // label6
+         // 
+         this.label6.AutoSize = true;
+         this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.label6.Location = new System.Drawing.Point(12, 132);
+         this.label6.Name = "label6";
+         this.label6.Size = new System.Drawing.Size(97, 15);
+         this.label6.TabIndex = 15;
+         this.label6.Text = "Medical History :";
+         // 
+         // medicalHistory_txt
+         // 
+         this.medicalHistory_txt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+         this.medicalHistory_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.medicalHistory_txt.Location = new System.Drawing.Point(54, 157);
+         this.medicalHistory_txt.Multiline = true;
+         this.medicalHistory_txt.Name = "medicalHistory_txt";
+         this.medicalHistory_txt.ReadOnly = true;
+         this.medicalHistory_txt.Size = new System.Drawing.Size(211, 57);
+         this.medicalHistory_txt.TabIndex = 16;
+         this.medicalHistory_txt.Text = " None.";
+         // 
          // PatientInfoForm
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.ClientSize = new System.Drawing.Size(413, 376);
+         this.Controls.Add(this.medicalHistory_txt);
+         this.Controls.Add(this.label6);
          this.Controls.Add(this.delete_btn);
          this.Controls.Add(this.label5);
          this.Controls.Add(this.id_txt);
@@ -163,7 +189,7 @@
          this.Controls.Add(this.label2);
          this.Controls.Add(this.label1);
          this.Name = "PatientInfoForm";
-         this.Text = "PatientInfoForm";
+         this.Text = "Patient Info";
          this.ResumeLayout(false);
          this.PerformLayout();
 
@@ -182,6 +208,8 @@
         private System.Windows.Forms.TextBox id_txt;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button delete_btn;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox medicalHistory_txt;
 
     }
 }
