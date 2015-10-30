@@ -38,6 +38,8 @@
          this.age_lbl = new System.Windows.Forms.Label();
          this.age_text = new System.Windows.Forms.TextBox();
          this.groupBox1 = new System.Windows.Forms.GroupBox();
+         this.addDisease_txt = new System.Windows.Forms.TextBox();
+         this.addDisease_btn = new System.Windows.Forms.Button();
          this.disease_checklist = new System.Windows.Forms.CheckedListBox();
          this.groupBox1.SuspendLayout();
          this.SuspendLayout();
@@ -88,7 +90,7 @@
          // 
          // save_btn
          // 
-         this.save_btn.Location = new System.Drawing.Point(325, 326);
+         this.save_btn.Location = new System.Drawing.Point(327, 378);
          this.save_btn.Name = "save_btn";
          this.save_btn.Size = new System.Drawing.Size(75, 23);
          this.save_btn.TabIndex = 6;
@@ -128,14 +130,34 @@
          // 
          // groupBox1
          // 
+         this.groupBox1.Controls.Add(this.addDisease_txt);
+         this.groupBox1.Controls.Add(this.addDisease_btn);
          this.groupBox1.Controls.Add(this.disease_checklist);
          this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.groupBox1.Location = new System.Drawing.Point(16, 136);
          this.groupBox1.Name = "groupBox1";
-         this.groupBox1.Size = new System.Drawing.Size(384, 173);
+         this.groupBox1.Size = new System.Drawing.Size(391, 207);
          this.groupBox1.TabIndex = 10;
          this.groupBox1.TabStop = false;
          this.groupBox1.Text = "Medical History";
+         // 
+         // addDisease_txt
+         // 
+         this.addDisease_txt.Location = new System.Drawing.Point(96, 175);
+         this.addDisease_txt.Name = "addDisease_txt";
+         this.addDisease_txt.Size = new System.Drawing.Size(282, 21);
+         this.addDisease_txt.TabIndex = 2;
+         // 
+         // addDisease_btn
+         // 
+         this.addDisease_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.addDisease_btn.Location = new System.Drawing.Point(6, 174);
+         this.addDisease_btn.Name = "addDisease_btn";
+         this.addDisease_btn.Size = new System.Drawing.Size(75, 23);
+         this.addDisease_btn.TabIndex = 1;
+         this.addDisease_btn.Text = "Add new";
+         this.addDisease_btn.UseVisualStyleBackColor = true;
+         this.addDisease_btn.Click += new System.EventHandler(this.addDisease_btn_Click);
          // 
          // disease_checklist
          // 
@@ -152,7 +174,7 @@
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         this.ClientSize = new System.Drawing.Size(411, 361);
+         this.ClientSize = new System.Drawing.Size(414, 413);
          this.Controls.Add(this.groupBox1);
          this.Controls.Add(this.age_text);
          this.Controls.Add(this.age_lbl);
@@ -166,6 +188,7 @@
          this.Name = "AddPatientForm";
          this.Text = "AddPatientForm";
          this.groupBox1.ResumeLayout(false);
+         this.groupBox1.PerformLayout();
          this.ResumeLayout(false);
          this.PerformLayout();
 
@@ -184,5 +207,7 @@
         private System.Windows.Forms.TextBox age_text;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckedListBox disease_checklist;
+        private System.Windows.Forms.TextBox addDisease_txt;
+        private System.Windows.Forms.Button addDisease_btn;
     }
 }

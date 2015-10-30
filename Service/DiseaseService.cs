@@ -19,5 +19,12 @@ namespace Clinic_Assistant
          IList<string> diseaseList = list.Select(e => new { e.disease }.disease.ToString()).ToList();
          return diseaseList;
       }
+
+      public void addDisease(Disease d)
+      {
+         var sess = SessionProvider.createSession();
+         sess.Save(d);
+         sess.Flush();
+      }
    }
 }
