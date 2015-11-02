@@ -67,7 +67,7 @@ namespace Clinic_Assistant
          }
       }
 
-      private object queryPatientDb()
+      private DataTable queryPatientDb()
       {
          PatientService patientService = new PatientService();
          return patientService.getAllPatients();
@@ -91,15 +91,19 @@ namespace Clinic_Assistant
       public void Fill_GridView()
       {
          var data = queryPatientDb();
-         var listBinding = new BindingSource();
-         listBinding.DataSource = data;
-         patients_dataGridView.DataSource = listBinding;
+         patients_dataGridView.DataSource = data;
          patients_dataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
          patients_dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
          patients_dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
          patients_dataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
          patients_dataGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+      }
 
+      private void search_txt_TextChanged(object sender, EventArgs e)
+      {
+         var dt = (DataTable)patients_dataGridView.DataSource;
+         dt.DefaultView.RowFilter = string.Format("name like '*{0}*'", search_txt.Text.Trim().Replace("'","''"));
+         
       }
    }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using NHibernate;
 using NHibernate.Cfg;
 using Clinic_Assistant.Domain;
@@ -24,22 +25,29 @@ namespace Clinic_Assistant
          sess.Flush();
       }
 
-      public object  getAllPatients()         //Type object to return AnonymousType
+      public DataTable  getAllPatients()         
       {
          var sess = SessionProvider.createSession();
          IQuery q = sess.CreateQuery("FROM Patient");
-          IList<Domain.Patient> list = q.List<Domain.Patient>();
-          foreach (Patient p in list)
-          {
-             if (p.dateOfBirth != DateTime.MinValue)
-             {
-                DateTime dob = p.dateOfBirth;
-                int age = dateofBirthToAge(dob);
-                p.age = age;
-             }
-          }
-          var reducedList = list.Select(e => new { e.id, e.name,e.phone, e.gender, e.age }).ToList();
-          return reducedList;
+         var list = q.List<Domain.Patient>();
+         DataTable dt = new DataTable();
+         dt.Columns.Add("ID");
+         dt.Columns.Add("Name");
+         dt.Columns.Add("Phone");
+         dt.Columns.Add("Gender");
+         dt.Columns.Add("Age");
+
+         foreach (var item in list)
+         {
+            if (item.dateOfBirth != DateTime.MinValue)
+            {
+               DateTime dob = item.dateOfBirth;
+               int age = dateofBirthToAge(dob);
+               item.age = age;
+            }
+            dt.Rows.Add(item.id.ToString(), item.name, item.phone, item.gender, item.age.ToString());
+         }
+         return dt;
       }
 
       public Patient getPatientById(int id)
