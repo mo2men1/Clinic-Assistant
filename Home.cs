@@ -97,6 +97,7 @@ namespace Clinic_Assistant
          patients_dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
          patients_dataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
          patients_dataGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+         patients_dataGridView.Sort(patients_dataGridView.Columns["Name"], ListSortDirection.Ascending);    
       }
 
       private void search_txt_TextChanged(object sender, EventArgs e)
@@ -106,4 +107,4 @@ namespace Clinic_Assistant
          
       }
    }
-}
+}  
