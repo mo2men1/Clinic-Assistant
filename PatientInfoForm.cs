@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Clinic_Assistant.Domain;
+using Clinic_Assistant.Service;
 namespace Clinic_Assistant
 {
     public partial class PatientInfoForm : Form
@@ -39,6 +40,11 @@ namespace Clinic_Assistant
             {
                medicalHistory_txt.Text = "None.";
             }
+
+            VisitService visitService = new VisitService();
+            IList<Visit> visitList = visitService.getVisitsByPatientId(id);
+            //Console.WriteLine(visitList[0].purpose);
+            fillGridView();
         }
 
         private void delete_btn_Click(object sender, EventArgs e)
@@ -51,9 +57,22 @@ namespace Clinic_Assistant
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddVisitForm form = new AddVisitForm(patient.id);
+            AddVisitForm form = new AddVisitForm(this, patient.id);
             form.Show();
         }
 
+        public void fillGridView()
+        {
+            var visitService = new VisitService();
+
+            var data = visitService.getVisitsTable(patient.id);
+            visits_dataGridView.DataSource = data;
+            visits_dataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            visits_dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //patients_dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //patients_dataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //patients_dataGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //patients_dataGridView.Sort(patients_dataGridView.Columns["Name"], ListSortDirection.Ascending);
+        }
     }
 }

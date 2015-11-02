@@ -42,6 +42,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.medicalHistory_txt = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.visits_dataGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.visits_dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -163,11 +165,11 @@
             // 
             this.medicalHistory_txt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.medicalHistory_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.medicalHistory_txt.Location = new System.Drawing.Point(54, 157);
+            this.medicalHistory_txt.Location = new System.Drawing.Point(115, 132);
             this.medicalHistory_txt.Multiline = true;
             this.medicalHistory_txt.Name = "medicalHistory_txt";
             this.medicalHistory_txt.ReadOnly = true;
-            this.medicalHistory_txt.Size = new System.Drawing.Size(211, 57);
+            this.medicalHistory_txt.Size = new System.Drawing.Size(277, 42);
             this.medicalHistory_txt.TabIndex = 16;
             this.medicalHistory_txt.Text = " None.";
             // 
@@ -182,11 +184,29 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // visits_dataGridView
+            // 
+            this.visits_dataGridView.AllowUserToAddRows = false;
+            this.visits_dataGridView.AllowUserToDeleteRows = false;
+            this.visits_dataGridView.AllowUserToOrderColumns = true;
+            this.visits_dataGridView.AllowUserToResizeRows = false;
+            this.visits_dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.visits_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.visits_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.visits_dataGridView.Location = new System.Drawing.Point(12, 180);
+            this.visits_dataGridView.Name = "visits_dataGridView";
+            this.visits_dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.visits_dataGridView.RowHeadersVisible = false;
+            this.visits_dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.visits_dataGridView.Size = new System.Drawing.Size(380, 150);
+            this.visits_dataGridView.TabIndex = 18;
+            // 
             // PatientInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(413, 376);
+            this.Controls.Add(this.visits_dataGridView);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.medicalHistory_txt);
             this.Controls.Add(this.label6);
@@ -203,6 +223,7 @@
             this.Controls.Add(this.label1);
             this.Name = "PatientInfoForm";
             this.Text = "Patient Info";
+            ((System.ComponentModel.ISupportInitialize)(this.visits_dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,6 +245,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox medicalHistory_txt;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView visits_dataGridView;
 
     }
 }

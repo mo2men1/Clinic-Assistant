@@ -20,9 +20,11 @@ namespace Clinic_Assistant
             InitializeComponent();
         }
 
-        public AddVisitForm(int id)
+        PatientInfoForm owner;
+        public AddVisitForm(PatientInfoForm form, int id)
         {
             InitializeComponent();
+            owner = form;
             patient_id = id;
             label1.Text = id.ToString();
         }
@@ -36,6 +38,7 @@ namespace Clinic_Assistant
             };
             VisitService visitService = new VisitService();
             visitService.addVisit(visit, patient_id);
+            owner.fillGridView();
             this.Close();
         }
     }
