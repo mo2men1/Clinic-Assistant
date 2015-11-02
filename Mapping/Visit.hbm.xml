@@ -8,9 +8,24 @@
       <generator class="identity" />
     </id>
     
-    <property name="purpose" />
+    <property name="complaint" />
     <property name="date" />
-    <!--<many-to-one not-null="true" name="Patient" column="patient_id" />-->
+    <property name="diagnosis" />
+
+    <property name="tooth" />
+    <property name="xray" />
+    <property name="treatment" />
+
+    <property name="dateDiagnosed" column="date_diagnosed" />
+    <property name="dateCompleted" column="date_completed" />
+
+    <property name="cost" />
+    <property name="ad" />
+    <property name="paid" />
+    <property name="remaining" />
+    <!--
+    -->
+
     <many-to-one not-null="true" name="patient" column="patient_id"/>
   </class>
 </hibernate-mapping>

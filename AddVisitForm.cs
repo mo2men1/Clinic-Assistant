@@ -26,7 +26,6 @@ namespace Clinic_Assistant
             InitializeComponent();
             owner = form;
             patient_id = id;
-            label1.Text = id.ToString();
         }
 
         private void saveVisitBtn_Click(object sender, EventArgs e)
@@ -34,12 +33,36 @@ namespace Clinic_Assistant
             
             Visit visit = new Visit()
             {
-                purpose = textBox1.Text,
+                date = date_dateTimePicker.Value,
+                complaint = complaint_textBox.Text,
+                diagnosis = diagnosis_textBox.Text,
+
+                tooth = tooth_textBox.Text,
+                treatment = treatmet_textBox.Text,
+
+                dateDiagnosed = dateDiagnosedDateTimePicker2.Value,
+                dateCompleted = dateDiagnosedDateTimePicker2.Value,
+
+                cost = Decimal.ToInt32(numericUpDown1.Value),
+                ad = Decimal.ToInt32(numericUpDown2.Value),
+                paid = Decimal.ToInt32(numericUpDown3.Value),
+                remaining = Decimal.ToInt32(numericUpDown4.Value),
+
             };
             VisitService visitService = new VisitService();
             visitService.addVisit(visit, patient_id);
             owner.fillGridView();
             this.Close();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

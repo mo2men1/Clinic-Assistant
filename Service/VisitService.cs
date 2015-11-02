@@ -32,11 +32,30 @@ namespace Clinic_Assistant.Service
         {
             var list = getVisitsByPatientId(patient_id);
             DataTable dt = new DataTable();
+
             dt.Columns.Add("ID");
-            dt.Columns.Add("purpose");
-            foreach (var item in list)
+
+            dt.Columns.Add("Date");
+            dt.Columns.Add("Complaint");
+            dt.Columns.Add("Diagnosis");
+
+            dt.Columns.Add("Tooth");
+            dt.Columns.Add("Treatment");
+
+            dt.Columns.Add("Date Diagnosed");
+            dt.Columns.Add("Date Completed");
+
+            dt.Columns.Add("Cost");
+            dt.Columns.Add("A.D.");
+            dt.Columns.Add("Paid");
+            dt.Columns.Add("Remaining");
+
+            foreach (var i in list)
             {
-                dt.Rows.Add(item.id.ToString(), item.purpose);
+                dt.Rows.Add(i.id.ToString(), i.date, i.complaint, i.diagnosis,
+                            i.tooth, i.treatment,
+                            i.dateDiagnosed, i.dateCompleted,
+                            i.cost, i.ad, i.paid, i.remaining);
             }
             return dt;
         }

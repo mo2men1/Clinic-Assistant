@@ -43,16 +43,13 @@ namespace Clinic_Assistant
 
             VisitService visitService = new VisitService();
             IList<Visit> visitList = visitService.getVisitsByPatientId(id);
-            //Console.WriteLine(visitList[0].purpose);
             fillGridView();
         }
 
         private void delete_btn_Click(object sender, EventArgs e)
         {
-           
             owner.delete_patient();
             this.Close();
-           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -69,9 +66,16 @@ namespace Clinic_Assistant
             visits_dataGridView.DataSource = data;
             visits_dataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             visits_dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            //patients_dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            //patients_dataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //patients_dataGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            visits_dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            visits_dataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            visits_dataGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            visits_dataGridView.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            visits_dataGridView.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            visits_dataGridView.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            visits_dataGridView.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            visits_dataGridView.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            visits_dataGridView.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            visits_dataGridView.Columns[11].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             //patients_dataGridView.Sort(patients_dataGridView.Columns["Name"], ListSortDirection.Ascending);
         }
     }
