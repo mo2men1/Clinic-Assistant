@@ -32,12 +32,13 @@ namespace Clinic_Assistant
 
         private void button1_Click(object sender, EventArgs e)
         {
+           int n;
             var patient = new Domain.Patient
             {
                 name = name_txt.Text,
                 phone = phone_txt.Text,
                 gender = gender_ComboBox.Text,
-                age = Convert.ToInt32(age_text.Text),
+                age = int.TryParse(age_text.Text,out n) ?  n :  (int?)null,
                 medical_history = getCheckedItems(),
             };
           
@@ -79,8 +80,13 @@ namespace Clinic_Assistant
            {
               str += itemchecked.ToString() + ", ";
            }
-           str = str.Substring(0, str.Length - 2);
-           str += ".";
+           if (str != "")
+           {
+              str = str.Substring(0, str.Length - 2);
+              str += ".";
+           }
+           else
+              str = "None.";
            return str;
 
         }

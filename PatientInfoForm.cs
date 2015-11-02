@@ -30,7 +30,14 @@ namespace Clinic_Assistant
                 service.dateofBirthToAge(patient.dateOfBirth).ToString() : "";
             gender_txt.Text = patient.gender;
             phone_txt.Text = patient.phone;
-            medicalHistory_txt.Text = patient.medical_history;
+            if (patient.medical_history != null)
+            {
+               medicalHistory_txt.Text = patient.medical_history;
+            }
+            else
+            {
+               medicalHistory_txt.Text = "None.";
+            }
         }
 
         private void delete_btn_Click(object sender, EventArgs e)
