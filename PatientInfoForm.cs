@@ -12,6 +12,7 @@ namespace Clinic_Assistant
 {
     public partial class PatientInfoForm : Form
     {
+        public Patient patient;
         public PatientInfoForm()
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace Clinic_Assistant
             InitializeComponent();
             owner = _owner; 
             var service = new PatientService();
-            Patient patient = service.getPatientById(id);
+            patient = service.getPatientById(id);
             name_txt.Text = patient.name;
             id_txt.Text = patient.id.ToString();
             age_txt.Text = patient.dateOfBirth != DateTime.MinValue ?
@@ -48,7 +49,11 @@ namespace Clinic_Assistant
            
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddVisitForm form = new AddVisitForm(patient.id);
+            form.Show();
+        }
 
-        
     }
 }

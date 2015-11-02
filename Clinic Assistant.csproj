@@ -77,6 +77,12 @@
     <Compile Include="AddPatientForm.Designer.cs">
       <DependentUpon>AddPatientForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddVisitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddVisitForm.Designer.cs">
+      <DependentUpon>AddVisitForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Domain\Disease.cs" />
     <Compile Include="Domain\Visit.cs" />
     <Compile Include="Home.cs">
@@ -99,6 +105,9 @@
     <Compile Include="SessionProvider.cs" />
     <EmbeddedResource Include="AddPatientForm.resx">
       <DependentUpon>AddPatientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddVisitForm.resx">
+      <DependentUpon>AddVisitForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
