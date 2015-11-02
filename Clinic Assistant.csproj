@@ -78,6 +78,7 @@
       <DependentUpon>AddPatientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Domain\Disease.cs" />
+    <Compile Include="Domain\Visit.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +131,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Mapping\Visit.hbm.xml" />
     <EmbeddedResource Include="Mapping\Disease.hbm.xml" />
     <EmbeddedResource Include="Mapping\Patient.hbm.xml" />
     <Content Include="hibernate.cfg.xml">

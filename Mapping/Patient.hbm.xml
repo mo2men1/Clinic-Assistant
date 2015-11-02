@@ -4,8 +4,6 @@
                   namespace="Clinic_Assistant.Domain">
 
   <class name="Patient" table="patient">
-
-
     <id name="id">
       <generator class="identity" />
     </id>
@@ -15,7 +13,29 @@
     <property name="gender" />
     <property name="dateOfBirth" column="dob"/>
     <property name="medical_history" />
-    
-  </class>
 
+    <bag name="visits" lazy="true" inverse="true" cascade="all-delete-orphan" >
+      <key column="patient_id" />
+      <one-to-many class="Visit" />
+    </bag>
+        
+  </class>
 </hibernate-mapping>
+
+<!--<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+assembly="Books"
+namespace="Books">
+  <class name="Book" table="Books">
+    <id name="Id">
+      <generator class="guid.comb" />
+    </id>
+    <property name="Title" not-null="true" />
+    <property name="Author" not-null="true"/>
+    <list name="Chapters" cascade="all-delete-orphan">
+      <key column="BookId"/>
+      <index column="ChapterIndex"/>
+      <one-to-many class="Chapter"/>
+    </list>
+  </class>
+</hibernate-mapping>-->

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                  assembly="Clinic Assistant"
+                  namespace="Clinic_Assistant.Domain">
+
+  <class name="Visit" table="visit">
+    <id name="id">
+      <generator class="identity" />
+    </id>
+    
+    <property name="purpose" />
+    <property name="date" />
+    <!--<many-to-one not-null="true" name="Patient" column="patient_id" />-->
+    <many-to-one not-null="true" name="patient" column="patient_id"/>
+  </class>
+</hibernate-mapping>

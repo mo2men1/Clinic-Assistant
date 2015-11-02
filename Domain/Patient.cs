@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 //using System.Collections.Generic;
 //using System.Linq;
 //using System.Text;
@@ -15,5 +16,6 @@ namespace Clinic_Assistant.Domain
         public virtual DateTime dateOfBirth { get; set; }
         public virtual Nullable<int> age { get; set; }
         public virtual string medical_history { get; set; }
+        public virtual IList<Visit> visits { get; set; } 
     }
 }
