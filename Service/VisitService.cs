@@ -33,7 +33,7 @@ namespace Clinic_Assistant.Service
             var list = getVisitsByPatientId(patient_id);
             DataTable dt = new DataTable();
 
-            dt.Columns.Add("ID");
+            dt.Columns.Add("ID").DataType = typeof(int);
 
             dt.Columns.Add("Date");
             dt.Columns.Add("Complaint");
@@ -50,12 +50,14 @@ namespace Clinic_Assistant.Service
             dt.Columns.Add("Paid");
             dt.Columns.Add("Remaining");
 
+            int n = 1;
             foreach (var i in list)
             {
-                dt.Rows.Add(i.id.ToString(), i.date, i.complaint, i.diagnosis,
+                dt.Rows.Add(n, i.date, i.complaint, i.diagnosis,
                             i.tooth, i.treatment,
                             i.dateDiagnosed, i.dateCompleted,
                             i.cost, i.ad, i.paid, i.remaining);
+                n++;
             }
             return dt;
         }
