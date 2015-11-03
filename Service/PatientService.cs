@@ -31,7 +31,7 @@ namespace Clinic_Assistant
          IQuery q = sess.CreateQuery("FROM Patient");
          var list = q.List<Domain.Patient>();
          DataTable dt = new DataTable();
-         dt.Columns.Add("ID");
+         dt.Columns.Add("ID").DataType = typeof(int);
          dt.Columns.Add("Name");
          dt.Columns.Add("Phone");
          dt.Columns.Add("Gender");
@@ -45,7 +45,7 @@ namespace Clinic_Assistant
                int age = dateofBirthToAge(dob);
                item.age = age;
             }
-            dt.Rows.Add(item.id.ToString(), item.name, item.phone, item.gender, item.age.ToString());
+            dt.Rows.Add(item.id, item.name, item.phone, item.gender, item.age.ToString());
          }
          return dt;
       }
