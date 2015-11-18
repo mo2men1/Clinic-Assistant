@@ -33,7 +33,7 @@ namespace Clinic_Assistant
             
             Visit visit = new Visit()
             {
-                date = date_dateTimePicker.Value,
+                date = date_dateTimePicker.Value.Date,
                 complaint = complaint_textBox.Text,
                 diagnosis = diagnosis_textBox.Text,
 

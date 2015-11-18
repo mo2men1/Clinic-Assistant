@@ -28,6 +28,7 @@ namespace Clinic_Assistant
            fillCheckBoxList();
         }
 
+
       
 
         private void button1_Click(object sender, EventArgs e)
@@ -56,6 +57,7 @@ namespace Clinic_Assistant
            DiseaseService diseasesrvc = new DiseaseService();
            var list = diseasesrvc.getAllDiseases();
            disease_checklist.DataSource = list;
+           disease_checklist.ClearSelected();
         }
 
         private void addDisease_btn_Click(object sender, EventArgs e)
@@ -90,6 +92,14 @@ namespace Clinic_Assistant
            return str;
 
         }
+
+       private void name_txt_TextChanged(object sender, EventArgs e)
+       {
+          
+          this.save_btn.Enabled = !String.IsNullOrEmpty(name_txt.Text)
+             && !String.IsNullOrEmpty(gender_ComboBox.Text);
+
+       }
         
 
     }

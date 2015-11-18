@@ -35,9 +35,12 @@ namespace Clinic_Assistant
 
       private void patients_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
       {
-          DataGridViewRow row = this.patients_dataGridView.Rows[e.RowIndex];
-          PatientInfoForm form = new PatientInfoForm(Int32.Parse(row.Cells["id"].Value.ToString()), this);
-          form.Show();
+         if (e.RowIndex >= 0)
+         {
+            DataGridViewRow row = this.patients_dataGridView.Rows[e.RowIndex];
+            PatientInfoForm form = new PatientInfoForm(Int32.Parse(row.Cells["id"].Value.ToString()), this);
+            form.Show();
+         }
       }
 
       private void patients_dataGridView_SelectionChanged(object sender, EventArgs e)
