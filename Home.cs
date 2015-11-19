@@ -106,7 +106,8 @@ namespace Clinic_Assistant
       private void search_txt_TextChanged(object sender, EventArgs e)
       {
          var dt = (DataTable)patients_dataGridView.DataSource;
-         dt.DefaultView.RowFilter = string.Format("name like '*{0}*'", search_txt.Text.Trim().Replace("'","''"));
+         dt.DefaultView.RowFilter = string.Format("name like '*{0}*' OR phone like '{0}*'", search_txt.Text.Trim().Replace("'","''"));
+         
          
       }
    }
