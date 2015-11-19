@@ -41,21 +41,18 @@
          this.label8 = new System.Windows.Forms.Label();
          this.label9 = new System.Windows.Forms.Label();
          this.label10 = new System.Windows.Forms.Label();
-         this.label11 = new System.Windows.Forms.Label();
          this.button1 = new System.Windows.Forms.Button();
          this.diagnosis_textBox = new System.Windows.Forms.TextBox();
          this.tooth_textBox = new System.Windows.Forms.TextBox();
          this.treatmet_textBox = new System.Windows.Forms.TextBox();
          this.dateDiagnosedDateTimePicker2 = new System.Windows.Forms.DateTimePicker();
          this.dateCompletedDateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-         this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-         this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-         this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-         this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-         ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-         ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-         ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-         ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+         this.cost_num = new System.Windows.Forms.NumericUpDown();
+         this.paid_num = new System.Windows.Forms.NumericUpDown();
+         this.remaining_num = new System.Windows.Forms.NumericUpDown();
+         ((System.ComponentModel.ISupportInitialize)(this.cost_num)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.paid_num)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.remaining_num)).BeginInit();
          this.SuspendLayout();
          // 
          // label2
@@ -159,7 +156,7 @@
          // label9
          // 
          this.label9.AutoSize = true;
-         this.label9.Location = new System.Drawing.Point(12, 289);
+         this.label9.Location = new System.Drawing.Point(12, 270);
          this.label9.Name = "label9";
          this.label9.Size = new System.Drawing.Size(60, 13);
          this.label9.TabIndex = 12;
@@ -168,20 +165,11 @@
          // label10
          // 
          this.label10.AutoSize = true;
-         this.label10.Location = new System.Drawing.Point(12, 263);
+         this.label10.Location = new System.Drawing.Point(12, 242);
          this.label10.Name = "label10";
          this.label10.Size = new System.Drawing.Size(31, 13);
          this.label10.TabIndex = 13;
          this.label10.Text = "Paid:";
-         // 
-         // label11
-         // 
-         this.label11.AutoSize = true;
-         this.label11.Location = new System.Drawing.Point(14, 237);
-         this.label11.Name = "label11";
-         this.label11.Size = new System.Drawing.Size(31, 13);
-         this.label11.TabIndex = 14;
-         this.label11.Text = "A.D.:";
          // 
          // button1
          // 
@@ -227,70 +215,58 @@
          this.dateCompletedDateTimePicker3.Size = new System.Drawing.Size(200, 20);
          this.dateCompletedDateTimePicker3.TabIndex = 6;
          // 
-         // numericUpDown1
+         // cost_num
          // 
-         this.numericUpDown1.Location = new System.Drawing.Point(104, 211);
-         this.numericUpDown1.Maximum = new decimal(new int[] {
+         this.cost_num.Location = new System.Drawing.Point(104, 211);
+         this.cost_num.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
-         this.numericUpDown1.Name = "numericUpDown1";
-         this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-         this.numericUpDown1.TabIndex = 7;
+         this.cost_num.Name = "cost_num";
+         this.cost_num.Size = new System.Drawing.Size(120, 20);
+         this.cost_num.TabIndex = 7;
+         this.cost_num.ValueChanged += new System.EventHandler(this.cost_num_ValueChanged);
          // 
-         // numericUpDown2
+         // paid_num
          // 
-         this.numericUpDown2.Location = new System.Drawing.Point(104, 237);
-         this.numericUpDown2.Maximum = new decimal(new int[] {
+         this.paid_num.Location = new System.Drawing.Point(104, 242);
+         this.paid_num.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
-         this.numericUpDown2.Name = "numericUpDown2";
-         this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
-         this.numericUpDown2.TabIndex = 8;
+         this.paid_num.Name = "paid_num";
+         this.paid_num.Size = new System.Drawing.Size(120, 20);
+         this.paid_num.TabIndex = 9;
+         this.paid_num.ValueChanged += new System.EventHandler(this.paid_num_ValueChanged);
          // 
-         // numericUpDown3
+         // remaining_num
          // 
-         this.numericUpDown3.Location = new System.Drawing.Point(104, 263);
-         this.numericUpDown3.Maximum = new decimal(new int[] {
+         this.remaining_num.Location = new System.Drawing.Point(104, 268);
+         this.remaining_num.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
-         this.numericUpDown3.Name = "numericUpDown3";
-         this.numericUpDown3.Size = new System.Drawing.Size(120, 20);
-         this.numericUpDown3.TabIndex = 9;
-         // 
-         // numericUpDown4
-         // 
-         this.numericUpDown4.Location = new System.Drawing.Point(104, 289);
-         this.numericUpDown4.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-         this.numericUpDown4.Name = "numericUpDown4";
-         this.numericUpDown4.Size = new System.Drawing.Size(120, 20);
-         this.numericUpDown4.TabIndex = 10;
+         this.remaining_num.Name = "remaining_num";
+         this.remaining_num.Size = new System.Drawing.Size(120, 20);
+         this.remaining_num.TabIndex = 10;
          // 
          // AddVisitForm
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.ClientSize = new System.Drawing.Size(326, 365);
-         this.Controls.Add(this.numericUpDown4);
-         this.Controls.Add(this.numericUpDown3);
-         this.Controls.Add(this.numericUpDown2);
-         this.Controls.Add(this.numericUpDown1);
+         this.Controls.Add(this.remaining_num);
+         this.Controls.Add(this.paid_num);
+         this.Controls.Add(this.cost_num);
          this.Controls.Add(this.dateCompletedDateTimePicker3);
          this.Controls.Add(this.dateDiagnosedDateTimePicker2);
          this.Controls.Add(this.treatmet_textBox);
          this.Controls.Add(this.tooth_textBox);
          this.Controls.Add(this.diagnosis_textBox);
          this.Controls.Add(this.button1);
-         this.Controls.Add(this.label11);
          this.Controls.Add(this.label10);
          this.Controls.Add(this.label9);
          this.Controls.Add(this.label8);
@@ -306,10 +282,9 @@
          this.Controls.Add(this.label2);
          this.Name = "AddVisitForm";
          this.Text = "AddVisitForm";
-         ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-         ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-         ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-         ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.cost_num)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.paid_num)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.remaining_num)).EndInit();
          this.ResumeLayout(false);
          this.PerformLayout();
 
@@ -330,16 +305,14 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox diagnosis_textBox;
         private System.Windows.Forms.TextBox tooth_textBox;
         private System.Windows.Forms.TextBox treatmet_textBox;
         private System.Windows.Forms.DateTimePicker dateDiagnosedDateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateCompletedDateTimePicker3;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.NumericUpDown cost_num;
+        private System.Windows.Forms.NumericUpDown paid_num;
+        private System.Windows.Forms.NumericUpDown remaining_num;
     }
 }

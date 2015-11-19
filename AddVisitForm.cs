@@ -40,13 +40,10 @@ namespace Clinic_Assistant
                 tooth = tooth_textBox.Text,
                 treatment = treatmet_textBox.Text,
 
-                dateDiagnosed = dateDiagnosedDateTimePicker2.Value,
-                dateCompleted = dateDiagnosedDateTimePicker2.Value,
 
-                cost = Decimal.ToInt32(numericUpDown1.Value),
-                ad = Decimal.ToInt32(numericUpDown2.Value),
-                paid = Decimal.ToInt32(numericUpDown3.Value),
-                remaining = Decimal.ToInt32(numericUpDown4.Value),
+                cost = Decimal.ToInt32(cost_num.Value),
+                paid = Decimal.ToInt32(paid_num.Value),
+                remaining = Decimal.ToInt32(remaining_num.Value),
 
             };
             VisitService visitService = new VisitService();
@@ -63,6 +60,16 @@ namespace Clinic_Assistant
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cost_num_ValueChanged(object sender, EventArgs e)
+        {
+           remaining_num.Value = cost_num.Value - paid_num.Value;
+        }
+
+        private void paid_num_ValueChanged(object sender, EventArgs e)
+        {
+           remaining_num.Value = cost_num.Value - paid_num.Value;
         }
     }
 }

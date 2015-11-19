@@ -73,9 +73,7 @@ namespace Clinic_Assistant
             visits_dataGridView.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             visits_dataGridView.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             visits_dataGridView.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            visits_dataGridView.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            visits_dataGridView.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            visits_dataGridView.Columns[11].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
             //patients_dataGridView.Sort(patients_dataGridView.Columns["Name"], ListSortDirection.Ascending);
         }
     }

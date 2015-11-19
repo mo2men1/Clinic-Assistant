@@ -16,11 +16,8 @@
     <property name="xray" />
     <property name="treatment" />
 
-    <property name="dateDiagnosed" column="date_diagnosed" />
-    <property name="dateCompleted" column="date_completed" />
 
     <property name="cost" />
-    <property name="ad" />
     <property name="paid" />
     <property name="remaining" />
     <!--

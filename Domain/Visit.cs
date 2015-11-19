@@ -15,11 +15,8 @@ namespace Clinic_Assistant.Domain
         public virtual string xray { get; set; }
         public virtual string treatment { get; set; }
 
-        public virtual DateTime dateDiagnosed { get; set; }
-        public virtual DateTime dateCompleted { get; set; }
 
         public virtual Nullable<int> cost { get; set; }
-        public virtual Nullable<int> ad { get; set; }
         public virtual Nullable<int> paid { get; set; }
         public virtual Nullable<int> remaining { get; set; }
     }
