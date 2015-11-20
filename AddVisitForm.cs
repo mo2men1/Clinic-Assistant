@@ -26,6 +26,7 @@ namespace Clinic_Assistant
             InitializeComponent();
             owner = form;
             patient_id = id;
+            
         }
 
         private void saveVisitBtn_Click(object sender, EventArgs e)

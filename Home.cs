@@ -30,7 +30,7 @@ namespace Clinic_Assistant
       private void addPatient_btn_Click(object sender, EventArgs e)
       {
          AddPatientForm form = new AddPatientForm(this);
-         form.Show();
+         form.ShowDialog();
       }
 
       private void patients_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -58,10 +58,10 @@ namespace Clinic_Assistant
       {
          if (e.KeyChar == (char)Keys.Enter && this.patients_dataGridView.SelectedRows.Count != 0)
          {
+            e.Handled = true;
             DataGridViewRow row = this.patients_dataGridView.CurrentRow;
             PatientInfoForm form = new PatientInfoForm(Int32.Parse(row.Cells["id"].Value.ToString()), this);
             form.Show();
-            e.Handled = true;
          }
          else if (e.KeyChar == (char)Keys.Escape)
          {

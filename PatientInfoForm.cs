@@ -55,7 +55,7 @@ namespace Clinic_Assistant
         private void button1_Click(object sender, EventArgs e)
         {
             AddVisitForm form = new AddVisitForm(this, patient.id);
-            form.Show();
+            form.ShowDialog();
         }
 
         public void fillGridView()
@@ -87,7 +87,7 @@ namespace Clinic_Assistant
           float paid = 0, costs = 0;
           for (int i = 0; i < nVisits; i++)
           {
-             paid += float.Parse(data.Rows[i]["Paid"].ToString()); //Cells["Paid"].Value;
+             paid += float.Parse(data.Rows[i]["Paid"].ToString());
              costs += float.Parse(data.Rows[i]["Cost"].ToString());
           }
           float remaining = costs - paid;
