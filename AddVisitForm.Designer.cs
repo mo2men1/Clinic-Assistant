@@ -70,7 +70,7 @@
          // 
          // saveVisitBtn
          // 
-         this.saveVisitBtn.Location = new System.Drawing.Point(227, 330);
+         this.saveVisitBtn.Location = new System.Drawing.Point(239, 330);
          this.saveVisitBtn.Name = "saveVisitBtn";
          this.saveVisitBtn.Size = new System.Drawing.Size(75, 23);
          this.saveVisitBtn.TabIndex = 11;
@@ -150,7 +150,7 @@
          // 
          // button1
          // 
-         this.button1.Location = new System.Drawing.Point(146, 330);
+         this.button1.Location = new System.Drawing.Point(158, 330);
          this.button1.Name = "button1";
          this.button1.Size = new System.Drawing.Size(75, 23);
          this.button1.TabIndex = 15;
@@ -244,6 +244,7 @@
          this.Controls.Add(this.saveVisitBtn);
          this.Controls.Add(this.complaint_textBox);
          this.Controls.Add(this.label2);
+         this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
          this.Name = "AddVisitForm";
          this.Text = "AddVisitForm";
          ((System.ComponentModel.ISupportInitialize)(this.cost_num)).EndInit();

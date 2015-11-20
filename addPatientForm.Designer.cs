@@ -190,6 +190,7 @@
          this.Controls.Add(this.name_lbl);
          this.Controls.Add(this.phone_txt);
          this.Controls.Add(this.name_txt);
+         this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
          this.Name = "AddPatientForm";
          this.Text = "AddPatientForm";
          this.groupBox1.ResumeLayout(false);
