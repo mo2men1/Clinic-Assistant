@@ -41,8 +41,8 @@ namespace Clinic_Assistant
                medicalHistory_txt.Text = "None.";
             }
 
-            VisitService visitService = new VisitService();
-            IList<Visit> visitList = visitService.getVisitsByPatientId(id);
+           // VisitService visitService = new VisitService();
+           // IList<Visit> visitList = visitService.getVisitsByPatientId(id);
             fillGridView();
         }
 
@@ -60,21 +60,43 @@ namespace Clinic_Assistant
 
         public void fillGridView()
         {
-            var visitService = new VisitService();
+           var visits = QueryVisits();
+           visits_dataGridView.DataSource = visits;
+           visits_dataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+           visits_dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+           visits_dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+           visits_dataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+           visits_dataGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+           visits_dataGridView.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+           visits_dataGridView.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+           visits_dataGridView.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+           visits_dataGridView.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+           
 
-            var data = visitService.getVisitsTable(patient.id);
-            visits_dataGridView.DataSource = data;
-            visits_dataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            visits_dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            visits_dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            visits_dataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            visits_dataGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            visits_dataGridView.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            visits_dataGridView.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            visits_dataGridView.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            visits_dataGridView.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+           //patients_dataGridView.Sort(patients_dataGridView.Columns["Name"], ListSortDirection.Ascending);
 
-            //patients_dataGridView.Sort(patients_dataGridView.Columns["Name"], ListSortDirection.Ascending);
+        }
+
+       DataTable QueryVisits()
+        {
+          var visitService = new VisitService();
+          var data = visitService.getVisitsTable(patient.id);
+
+
+          int nVisits = data.Rows.Count;
+          float paid = 0, costs = 0;
+          for (int i = 0; i < nVisits; i++)
+          {
+             paid += float.Parse(data.Rows[i]["Paid"].ToString()); //Cells["Paid"].Value;
+             costs += float.Parse(data.Rows[i]["Cost"].ToString());
+          }
+          float remaining = costs - paid;
+
+          CostSum_txt.Text = costs.ToString();
+          PaidSum_txt.Text = paid.ToString();
+          RemainingSum_txt.Text = remaining.ToString();
+
+          return data;
         }
     }
 }

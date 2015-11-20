@@ -212,6 +212,11 @@
             0,
             0,
             0});
+         this.remaining_num.Minimum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            -2147483648});
          this.remaining_num.Name = "remaining_num";
          this.remaining_num.Size = new System.Drawing.Size(120, 20);
          this.remaining_num.TabIndex = 10;
