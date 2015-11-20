@@ -48,8 +48,8 @@ namespace Clinic_Assistant
 
         private void delete_btn_Click(object sender, EventArgs e)
         {
-            owner.delete_patient();
-            this.Close();
+            if(owner.delete_patient())
+               this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)

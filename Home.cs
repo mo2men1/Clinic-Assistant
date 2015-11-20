@@ -76,7 +76,7 @@ namespace Clinic_Assistant
          return patientService.getAllPatients();
       }
 
-      public void delete_patient()
+      public bool delete_patient()
       {
          string name = patients_dataGridView.CurrentRow.Cells["name"].Value.ToString();
          DialogResult dialogresult = MessageBox.Show(
@@ -88,7 +88,9 @@ namespace Clinic_Assistant
             PatientService patientservice = new PatientService();
             patientservice.deletePatient(id);
             patients_dataGridView.Rows.Remove(patients_dataGridView.CurrentRow);
+            return true;
          }
+         return false;
       }
 
       public void Fill_GridView()
@@ -106,9 +108,7 @@ namespace Clinic_Assistant
       private void search_txt_TextChanged(object sender, EventArgs e)
       {
          var dt = (DataTable)patients_dataGridView.DataSource;
-         dt.DefaultView.RowFilter = string.Format("name like '*{0}*' OR phone like '{0}*'", search_txt.Text.Trim().Replace("'","''"));
-         
-         
+         dt.DefaultView.RowFilter = string.Format("name like '*{0}*' OR phone like '{0}*'", search_txt.Text.Trim().Replace("'","''"));        
       }
    }
 }  
