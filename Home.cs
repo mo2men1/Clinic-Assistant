@@ -42,6 +42,23 @@ namespace Clinic_Assistant
             form.Show();
          }
       }
+      
+      private void patients_dataGridView_KeyDown(object sender, KeyEventArgs e)
+      {
+         int index = patients_dataGridView.CurrentCell.RowIndex;
+         if (e.KeyCode == Keys.Enter && this.patients_dataGridView.SelectedRows.Count != 0)
+         {
+            DataGridViewRow row = patients_dataGridView.CurrentRow;
+            PatientInfoForm form = new PatientInfoForm(Int32.Parse(row.Cells["id"].Value.ToString()), this);
+            form.Show();
+            e.Handled = true;
+         }
+         else if (e.KeyCode == Keys.Escape)
+         {
+            this.patients_dataGridView.ClearSelection();
+            this.delete_btn.Enabled = false;
+         }
+      }
 
       private void patients_dataGridView_SelectionChanged(object sender, EventArgs e)
       {
@@ -54,21 +71,6 @@ namespace Clinic_Assistant
             delete_patient();
       }
 
-      private void patients_dataGridView_KeyPress(object sender, KeyPressEventArgs e)
-      {
-         if (e.KeyChar == (char)Keys.Enter && this.patients_dataGridView.SelectedRows.Count != 0)
-         {
-            e.Handled = true;
-            DataGridViewRow row = this.patients_dataGridView.CurrentRow;
-            PatientInfoForm form = new PatientInfoForm(Int32.Parse(row.Cells["id"].Value.ToString()), this);
-            form.Show();
-         }
-         else if (e.KeyChar == (char)Keys.Escape)
-         {
-            this.patients_dataGridView.ClearSelection();
-            this.delete_btn.Enabled = false;
-         }
-      }
 
       private DataTable queryPatientDb()
       {
@@ -125,5 +127,6 @@ namespace Clinic_Assistant
          search_txt.ForeColor = Color.Gray;
          search_txt.Text = " Search with name or phone number.";
       }
+
    }
 }  

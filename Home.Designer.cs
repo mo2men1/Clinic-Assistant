@@ -67,7 +67,7 @@
          this.patients_dataGridView.Size = new System.Drawing.Size(543, 294);
          this.patients_dataGridView.TabIndex = 2;
          this.patients_dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.patients_dataGridView_CellContentClick);
-         this.patients_dataGridView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.patients_dataGridView_KeyPress);
+         this.patients_dataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.patients_dataGridView_KeyDown);
          // 
          // delete_btn
          // 
