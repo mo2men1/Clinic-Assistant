@@ -107,8 +107,23 @@ namespace Clinic_Assistant
 
       private void search_txt_TextChanged(object sender, EventArgs e)
       {
-         var dt = (DataTable)patients_dataGridView.DataSource;
-         dt.DefaultView.RowFilter = string.Format("name like '*{0}*' OR phone like '{0}*'", search_txt.Text.Trim().Replace("'","''"));        
+         if (!(search_txt.Text == " Search with name or phone number."))
+         {
+            var dt = (DataTable)patients_dataGridView.DataSource;
+            dt.DefaultView.RowFilter = string.Format("name like '*{0}*' OR phone like '{0}*'", search_txt.Text.Trim().Replace("'", "''"));
+         }
+      }
+
+      private void search_txt_RemovePlaceholder(object sender, EventArgs e)
+      {
+         search_txt.ForeColor = Color.Black;
+         search_txt.Text = "";
+      }
+
+      private void search_txt_ShowPlaceholder(object sender, EventArgs e)
+      {
+         search_txt.ForeColor = Color.Gray;
+         search_txt.Text = " Search with name or phone number.";
       }
    }
 }  

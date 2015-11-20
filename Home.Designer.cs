@@ -94,11 +94,15 @@
          // search_txt
          // 
          this.search_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.search_txt.ForeColor = System.Drawing.Color.Gray;
          this.search_txt.Location = new System.Drawing.Point(69, 21);
          this.search_txt.Name = "search_txt";
          this.search_txt.Size = new System.Drawing.Size(487, 21);
          this.search_txt.TabIndex = 4;
+         this.search_txt.Text = " Search with name or phone number.";
          this.search_txt.TextChanged += new System.EventHandler(this.search_txt_TextChanged);
+         this.search_txt.GotFocus += new System.EventHandler(this.search_txt_RemovePlaceholder);
+         this.search_txt.LostFocus += new System.EventHandler(this.search_txt_ShowPlaceholder);
          // 
          // Home
          // 
