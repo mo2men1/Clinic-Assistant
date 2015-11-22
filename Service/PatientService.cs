@@ -24,6 +24,7 @@ namespace Clinic_Assistant
          sess.Save(p);
          sess.Flush();
       }
+
       public void update(int id, Patient p)
       {
           var sess = SessionProvider.createSession();
@@ -38,6 +39,7 @@ namespace Clinic_Assistant
           }
           patient.gender = p.gender;
           patient.phone = p.phone;
+          patient.medical_history = p.medical_history;
           sess.Update(patient);
           sess.Flush();
       }

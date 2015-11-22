@@ -49,9 +49,26 @@ namespace Clinic_Assistant
             phone_txt.Text = patient.phone;
             age_text.Text = patient.dateOfBirth != DateTime.MinValue ?
                 service.dateofBirthToAge(patient.dateOfBirth).ToString() : "";
+            
             if(patient.gender=="Male")gender_ComboBox.SelectedIndex = 0;
             else gender_ComboBox.SelectedIndex = 1;
-
+            
+            String history = patient.medical_history;
+            if (history != null)
+            {
+                var splitted = history.Split(new[] { ", " },StringSplitOptions.RemoveEmptyEntries);
+                for (int i = 0; i < disease_checklist.Items.Count; i++)
+                {
+                    foreach (String disease in splitted)
+                    {
+                        if (disease == (string)disease_checklist.Items[i])
+                        {
+                            disease_checklist.SetItemChecked(i, true);
+                            break;
+                        }
+                    }
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -96,10 +113,9 @@ namespace Clinic_Assistant
             if (str != "")
             {
                 str = str.Substring(0, str.Length - 2);
-                str += ".";
             }
             else
-                str = "None.";
+                str = "None";
             return str;
 
         }

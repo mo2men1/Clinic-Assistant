@@ -34,7 +34,7 @@ namespace Clinic_Assistant
             phone_txt.Text = patient.phone;
             if (patient.medical_history != null)
             {
-               medicalHistory_txt.Text = patient.medical_history;
+               medicalHistory_txt.Text = patient.medical_history + ".";
             }
             else
             {
