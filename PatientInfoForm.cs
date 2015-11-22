@@ -20,6 +20,7 @@ namespace Clinic_Assistant
         }
 
         Home owner;
+
         public PatientInfoForm(int id, Home _owner)
         {
             InitializeComponent();
@@ -41,9 +42,8 @@ namespace Clinic_Assistant
                medicalHistory_txt.Text = "None.";
             }
 
-           // VisitService visitService = new VisitService();
-           // IList<Visit> visitList = visitService.getVisitsByPatientId(id);
             fillGridView();
+            edit_visit_btn.Enabled = true;
         }
 
         private void delete_btn_Click(object sender, EventArgs e)
@@ -98,5 +98,12 @@ namespace Clinic_Assistant
 
           return data;
         }
+
+       private void edit_visit_btn_Click(object sender, EventArgs e)
+       {
+           int visitId = Int32.Parse(visits_dataGridView.CurrentRow.Cells["id"].Value.ToString());
+           AddVisitForm form = new AddVisitForm(this, patient.id, visitId);
+           form.ShowDialog();
+       }
     }
 }

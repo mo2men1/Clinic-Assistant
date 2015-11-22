@@ -21,6 +21,29 @@ namespace Clinic_Assistant.Service
             sess.Flush();
         }
 
+        public Visit getVisitById(int id)
+        {
+            var sess = SessionProvider.createSession();
+            IQuery q = sess.CreateQuery("FROM Visit where id = " + id.ToString());
+            return q.List<Domain.Visit>().First();
+        }
+
+        public void update(int id, Visit v)
+        {
+            var sess = SessionProvider.createSession();
+            IQuery q = sess.CreateQuery("FROM Visit where id = " + id.ToString());
+            Visit visit = q.List<Domain.Visit>().First();
+            visit.date = v.date;
+            visit.complaint = v.complaint;
+            visit.diagnosis = v.diagnosis;
+            visit.tooth = v.tooth;
+            visit.treatment = v.treatment;
+            visit.cost = v.cost;
+            visit.paid = v.paid;
+            sess.Update(visit);
+            sess.Flush();
+        }
+
         public IList<Visit> getVisitsByPatientId(int patient_id)
         {
             PatientService patientService = new PatientService();
@@ -50,7 +73,7 @@ namespace Clinic_Assistant.Service
             int n = 1;
             foreach (var i in list)
             {
-                dt.Rows.Add(n, i.date, i.complaint, i.diagnosis,
+                dt.Rows.Add(i.id, i.date, i.complaint, i.diagnosis,
                             i.tooth, i.treatment,
                             i.cost, i.paid, i.remaining);
                 n++;
