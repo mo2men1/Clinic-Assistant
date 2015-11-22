@@ -20,7 +20,6 @@ namespace Clinic_Assistant
             fillCheckBoxList();
         }
 
-
         Home owner;
         public AddPatientForm(Home _owner)
         {
@@ -38,6 +37,11 @@ namespace Clinic_Assistant
             InitializeComponent();
             save_btn.Visible = false;
             owner = _owner;
+            fillFormFromPatient(id);
+        }
+
+        private void fillFormFromPatient(int id)
+        {
             var service = new PatientService();
             Patient patient = service.getPatientById(id);
             fillCheckBoxList();
@@ -45,26 +49,16 @@ namespace Clinic_Assistant
             phone_txt.Text = patient.phone;
             age_text.Text = patient.dateOfBirth != DateTime.MinValue ?
                 service.dateofBirthToAge(patient.dateOfBirth).ToString() : "";
-            gender_ComboBox.SelectedIndex = 0;
+            if(patient.gender=="Male")gender_ComboBox.SelectedIndex = 0;
+            else gender_ComboBox.SelectedIndex = 1;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int n;
-            var patient = new Domain.Patient
-            {
-                name = name_txt.Text,
-                phone = phone_txt.Text,
-                gender = gender_ComboBox.Text,
-                age = int.TryParse(age_text.Text, out n) ? n : (int?)null,
-                medical_history = getCheckedItems(),
-            };
-
             PatientService patientService = new PatientService();
-            patientService.save(patient);
-
-
-
+            patientService.save(createPatientFromForm());
+            
             owner.Fill_GridView();
             this.Close();
         }
@@ -118,10 +112,10 @@ namespace Clinic_Assistant
 
         }
 
-        private void save_edits_btn_Click(object sender, EventArgs e)
+        private Patient createPatientFromForm()
         {
             int n;
-            var patient = new Domain.Patient
+            return new Domain.Patient
             {
                 name = name_txt.Text,
                 phone = phone_txt.Text,
@@ -129,12 +123,13 @@ namespace Clinic_Assistant
                 age = int.TryParse(age_text.Text, out n) ? n : (int?)null,
                 medical_history = getCheckedItems(),
             };
+        }
+        private void save_edits_btn_Click(object sender, EventArgs e)
+        {
             PatientService patientService = new PatientService();
-            patientService.update(gid, patient);
-
+            patientService.update(gid, createPatientFromForm());
             owner.Fill_GridView();
             this.Close();
-
         }
 
 
