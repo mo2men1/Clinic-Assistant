@@ -25,6 +25,27 @@ namespace Clinic_Assistant
          sess.Flush();
       }
 
+      public void update(int id, Patient p)
+      {
+          var sess = SessionProvider.createSession();
+          IQuery q = sess.CreateQuery("FROM Patient where id = " + id.ToString());
+          Patient patient = q.List<Domain.Patient>().First();
+          patient.name = p.name;
+          if (p.age != null)
+          {
+              int age = (int)p.age;
+              patient.dateOfBirth = ageToDateOfBirth(age);
+              p.age = null;
+          }
+          patient.gender = p.gender;
+          patient.phone = p.phone;
+          Console.Out.WriteLine(p.age);
+          Console.Out.WriteLine(patient.age);
+         
+          sess.Update(patient);
+          sess.Flush();
+      }
+
       public DataTable  getAllPatients()         
       {
          var sess = SessionProvider.createSession();

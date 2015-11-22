@@ -33,6 +33,14 @@ namespace Clinic_Assistant
          form.ShowDialog();
       }
 
+      private void edit_btn_Click(object sender, EventArgs e)
+      {
+          int id = Int32.Parse(patients_dataGridView.CurrentRow.Cells["id"].Value.ToString());
+          AddPatientForm form = new AddPatientForm(id, this);
+          //AddPatientForm form = new AddPatientForm(this, );
+          form.ShowDialog();
+      }
+
       private void patients_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
       {
          if (e.RowIndex >= 0)
@@ -57,12 +65,14 @@ namespace Clinic_Assistant
          {
             this.patients_dataGridView.ClearSelection();
             this.delete_btn.Enabled = false;
+            this.edit_btn.Enabled = false;
          }
       }
 
       private void patients_dataGridView_SelectionChanged(object sender, EventArgs e)
       {
          delete_btn.Enabled = true;
+         edit_btn.Enabled = true;
       }
 
       private void delete_btn_Click(object sender, EventArgs e)
