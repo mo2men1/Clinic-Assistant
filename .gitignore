@@ -146,6 +146,7 @@ ModelManifest.xml
 Thumbs.db
 ehthumbs.db
 
+*.jpg
 # Folder config file
 Desktop.ini
 

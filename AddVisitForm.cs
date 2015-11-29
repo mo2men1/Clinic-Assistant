@@ -16,6 +16,9 @@ namespace Clinic_Assistant
     {
         public int patient_id;
         public int visit_id;
+        bool editing = false;
+
+        public string fileName;
         public AddVisitForm()
         {
             InitializeComponent();
@@ -28,19 +31,21 @@ namespace Clinic_Assistant
             owner = form;
             patient_id = id;
             save_visit_btn.Visible = true;
-            
+
         }
-        public AddVisitForm(PatientInfoForm form, int pId,int vId)
+        //ediitng
+        public AddVisitForm(PatientInfoForm form, int pId, int vId)
         {
             InitializeComponent();
             owner = form;
             patient_id = pId;
             visit_id = vId;
+            editing = true;
             save_edits_btn.Visible = true;
             fillFormFromVisit();
 
         }
-
+        string oldXrayName;
         void fillFormFromVisit()
         {
             VisitService visitService = new VisitService();
@@ -51,7 +56,7 @@ namespace Clinic_Assistant
             treatmet_textBox.Text = visit.treatment;
             cost_num.Value = (int)visit.cost;
             paid_num.Value = (int)visit.paid;
-
+            oldXrayName = visit.xray;
         }
 
         private void saveVisitBtn_Click(object sender, EventArgs e)
@@ -62,8 +67,27 @@ namespace Clinic_Assistant
             this.Close();
         }
 
+        public static string RandomString()
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var random = new Random();
+            return new string(Enumerable.Repeat(chars, 12)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
         private Visit createVisitFromForm()
         {
+            string imageName="";
+            if(!String.IsNullOrEmpty(fileName)){
+                if(editing){
+                    System.IO.File.Copy(fileName, @"..\..\xray\" + oldXrayName + ".jpg", true);
+                }
+                else{
+                    imageName=RandomString();
+                    System.IO.File.Copy(fileName, @"..\..\xray\" + imageName + ".jpg", true);
+                }
+            }
+
             return new Visit()
             {
                 date = date_dateTimePicker.Value.Date,
@@ -73,13 +97,14 @@ namespace Clinic_Assistant
                 tooth = tooth_textBox.Text,
                 treatment = treatmet_textBox.Text,
 
-
                 cost = Decimal.ToInt32(cost_num.Value),
                 paid = Decimal.ToInt32(paid_num.Value),
                 remaining = Decimal.ToInt32(remaining_num.Value),
 
+                xray = imageName,
             };
         }
+
 
         private void save_edits_btn_Click(object sender, EventArgs e)
         {
@@ -101,12 +126,12 @@ namespace Clinic_Assistant
 
         private void cost_num_ValueChanged(object sender, EventArgs e)
         {
-           remaining_num.Value = cost_num.Value - paid_num.Value;
+            remaining_num.Value = cost_num.Value - paid_num.Value;
         }
 
         private void paid_num_ValueChanged(object sender, EventArgs e)
         {
-           remaining_num.Value = cost_num.Value - paid_num.Value;
+            remaining_num.Value = cost_num.Value - paid_num.Value;
         }
 
         private void save_edits_btn_Click_1(object sender, EventArgs e)
@@ -115,6 +140,16 @@ namespace Clinic_Assistant
             visitService.update(visit_id, createVisitFromForm());
             owner.fillGridView();
             this.Close();
+        }
+
+        //saving xray
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                fileName = openFileDialog1.FileName;
+            }
+
         }
     }
 }

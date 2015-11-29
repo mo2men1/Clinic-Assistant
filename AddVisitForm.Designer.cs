@@ -47,6 +47,7 @@
             this.paid_num = new System.Windows.Forms.NumericUpDown();
             this.remaining_num = new System.Windows.Forms.NumericUpDown();
             this.save_edits_btn = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.cost_num)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paid_num)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.remaining_num)).BeginInit();
@@ -158,6 +159,7 @@
             this.button1.TabIndex = 15;
             this.button1.Text = "Add X-Ray";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // diagnosis_textBox
             // 
@@ -234,6 +236,10 @@
             this.save_edits_btn.Visible = false;
             this.save_edits_btn.Click += new System.EventHandler(this.save_edits_btn_Click_1);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // AddVisitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,5 +296,6 @@
         private System.Windows.Forms.NumericUpDown paid_num;
         private System.Windows.Forms.NumericUpDown remaining_num;
         private System.Windows.Forms.Button save_edits_btn;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
