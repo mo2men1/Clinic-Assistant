@@ -71,9 +71,9 @@
             // 
             // save_visit_btn
             // 
-            this.save_visit_btn.Location = new System.Drawing.Point(239, 330);
+            this.save_visit_btn.Location = new System.Drawing.Point(227, 253);
             this.save_visit_btn.Name = "save_visit_btn";
-            this.save_visit_btn.Size = new System.Drawing.Size(75, 23);
+            this.save_visit_btn.Size = new System.Drawing.Size(87, 23);
             this.save_visit_btn.TabIndex = 11;
             this.save_visit_btn.Text = "Save";
             this.save_visit_btn.UseVisualStyleBackColor = true;
@@ -152,7 +152,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(158, 330);
+            this.button1.Location = new System.Drawing.Point(146, 253);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 15;
@@ -225,9 +225,9 @@
             // 
             // save_edits_btn
             // 
-            this.save_edits_btn.Location = new System.Drawing.Point(228, 301);
+            this.save_edits_btn.Location = new System.Drawing.Point(227, 253);
             this.save_edits_btn.Name = "save_edits_btn";
-            this.save_edits_btn.Size = new System.Drawing.Size(86, 23);
+            this.save_edits_btn.Size = new System.Drawing.Size(87, 23);
             this.save_edits_btn.TabIndex = 16;
             this.save_edits_btn.Text = "Save Changes";
             this.save_edits_btn.UseVisualStyleBackColor = true;
@@ -238,7 +238,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(326, 365);
+            this.ClientSize = new System.Drawing.Size(323, 289);
             this.Controls.Add(this.save_edits_btn);
             this.Controls.Add(this.remaining_num);
             this.Controls.Add(this.paid_num);
