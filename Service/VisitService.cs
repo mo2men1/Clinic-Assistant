@@ -71,6 +71,7 @@ namespace Clinic_Assistant.Service
             dt.Columns.Add("Remaining");
 
             int n = 1;
+            dictIndexId.Clear();
             foreach (var i in list)
             {
                 dictIndexId.Add(n, i.id);
