@@ -51,7 +51,7 @@ namespace Clinic_Assistant.Service
             return p.visits;
         }
 
-        public DataTable getVisitsTable(int patient_id)
+        public DataTable getVisitsTable(int patient_id, Dictionary<int, int> dictIndexId)
         {
             var list = getVisitsByPatientId(patient_id);
             DataTable dt = new DataTable();
@@ -73,7 +73,8 @@ namespace Clinic_Assistant.Service
             int n = 1;
             foreach (var i in list)
             {
-                dt.Rows.Add(i.id, i.date, i.complaint, i.diagnosis,
+                dictIndexId.Add(n, i.id);
+                dt.Rows.Add(n, i.date, i.complaint, i.diagnosis,
                             i.tooth, i.treatment,
                             i.cost, i.paid, i.remaining);
                 n++;

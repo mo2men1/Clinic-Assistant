@@ -77,10 +77,11 @@ namespace Clinic_Assistant
 
         }
 
+       Dictionary<int, int>  dictIndexId = new Dictionary<int, int>();
        DataTable QueryVisits()
         {
           var visitService = new VisitService();
-          var data = visitService.getVisitsTable(patient.id);
+          var data = visitService.getVisitsTable(patient.id,dictIndexId);
 
 
           int nVisits = data.Rows.Count;
@@ -101,7 +102,7 @@ namespace Clinic_Assistant
 
        private void edit_visit_btn_Click(object sender, EventArgs e)
        {
-           int visitId = Int32.Parse(visits_dataGridView.CurrentRow.Cells["id"].Value.ToString());
+           int visitId = dictIndexId[Int32.Parse(visits_dataGridView.CurrentRow.Cells["id"].Value.ToString())];
            AddVisitForm form = new AddVisitForm(this, patient.id, visitId);
            form.ShowDialog();
        }
